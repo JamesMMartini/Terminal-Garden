@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] float timeStep;
     float timeCount;
 
+    [Header("Terminal")]
+    [SerializeField] TerminalManager terminal;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -52,25 +55,51 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ExecuteCommand()
+    public string ExecuteCommand()
     {
         terminalInput.Trim();
+        string returnString = terminalInput + " - ";
 
         if (terminalInput == "walk")
         {
             player.walking = true;
+            terminal.DeselectObject();
+            returnString += "NOW WALKING";
         }
         else if (terminalInput == "stop")
         {
             player.walking = false;
+            terminal.DeselectObject();
+            returnString += "STOPPING WALK";
         }
-        else if (terminalInput.StartsWith("rotate"))
+        else if (terminalInput == "rotate l")
         {
-            string num = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
-            float rotation = Single.Parse(num);
+            float rotation = -15f;
             player.rotation = rotation;
+            terminal.DeselectObject();
+            returnString += "ROTATING " + rotation + " DEGREES";
+        }
+        else if (terminalInput == "rotate r")
+        {
+            float rotation = 15f;
+            player.rotation = rotation;
+            terminal.DeselectObject();
+            returnString += "ROTATING " + rotation + " DEGREES";
+        }
+        else if (terminalInput == "inspect")
+        {
+            
+        }
+        else if (terminalInput == "help")
+        {
+
+        }
+        else
+        {
+            returnString += "UNKNOWN COMMAND";
         }
 
         terminalInput = "";
+        return returnString;
     }
 }

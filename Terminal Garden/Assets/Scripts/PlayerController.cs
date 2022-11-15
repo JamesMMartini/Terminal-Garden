@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
             if (rotation != 0f)
             {
                 transform.Rotate(new Vector3(0f, rotation, 0f));
+                rotation = 0f;
             }
         }
     }
