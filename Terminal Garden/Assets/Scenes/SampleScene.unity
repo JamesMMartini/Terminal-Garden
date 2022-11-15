@@ -1670,24 +1670,3 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1087113846}
     - target: {fileID: 7557562803995154697, guid: 42c3760436e702842866614fa2b409ed, type: 3}
-<<<<<<< Updated upstream
-      propertyPath: timeStep
-      value: 1
-      objectReference: {fileID: 0}
-=======
-<<<<<<< HEAD
-      propertyPath: terminal
-      value: 
-      objectReference: {fileID: 52339657}
-=======
-      propertyPath: timeStep
-      value: 1
-      objectReference: {fileID: 0}
->>>>>>> 2c9f7c16b7560acc49bff1a237673b56977eb012
->>>>>>> Stashed changes
-    - target: {fileID: 7557562803995154698, guid: 42c3760436e702842866614fa2b409ed, type: 3}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 42c3760436e702842866614fa2b409ed, type: 3}
