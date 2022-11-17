@@ -24,13 +24,13 @@ MonoBehaviour:
     lookat +
     object name -TURN TO LOOK AT AN OBJECT
 
-    scan - SCAN AND RETURN ALL INTERACTBLE
-    OBJECTS WITHIN 40M
+    scan - SCAN ALL INTERACTBLE OBJECTS
+    WITHIN 40M
 
     select + object name - OPEN THE OBJECT FOLDER
 
-    ls
-    - LISTING ALL FILES IN CURRENT FOLDER
+    ls - LISTING
+    ALL FILES IN CURRENT FOLDER
 
     ls inventory - LIST ALL ITEMS IN INVENTORY
 
