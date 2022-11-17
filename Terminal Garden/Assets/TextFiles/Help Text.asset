@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f59f1d90cd694e5b8e18d743dcc8900, type: 3}
+  m_Name: Help Text
+  m_EditorClassIdentifier: 
+  text: 'COMMAND REFERENCES:
+
+    walk - MOVE IN CURRENT DIRECTION
+
+    stop - STOP
+    ALL MOVEMENT
+
+    turn l/turn r - ROTATE 15 DEGREES LEFT/RIGHT
+
+    lookat +
+    object name -TURN TO LOOK AT AN OBJECT
+
+    scan - SCAN AND RETURN ALL INTERACTBLE
+    OBJECTS WITHIN 40M
+
+    select + object name - OPEN THE OBJECT FOLDER
+
+    ls
+    - LISTING ALL FILES IN CURRENT FOLDER
+
+    ls inventory - LIST ALL ITEMS IN INVENTORY
+
+    open
+    + file name - OPEN OR RUN FILE
+
+    exit - EXIT CURRENT FOLDER/FILE
+
+'

@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class TerminalManager : MonoBehaviour
 {
     [SerializeField] Camera cam;
 
     [Header("UI Objects")]
-    [SerializeField] TMP_Text inputField;
-    [SerializeField] TMP_Text terminalLog;
+    [SerializeField] Text inputField;
+    [SerializeField] Text terminalLog;
+    [SerializeField] Text folderName;
+    [SerializeField] Text fileList;
     [SerializeField] GameObject selectedIndicator;
 
     public GameObject selectedObject;
@@ -19,7 +22,7 @@ public class TerminalManager : MonoBehaviour
     void Start()
     {
         inputField.text = "";
-        terminalLog.text = "";
+        terminalLog.text = "TYPE help FOR COMMAND REFERENCES";
         Keyboard.current.onTextInput += OnTextInput;
     }
 
@@ -37,6 +40,7 @@ public class TerminalManager : MonoBehaviour
         if (context.performed)
         {
             terminalLog.text += "\r\n" + GameManager.Instance.ExecuteCommand();
+            inputField.text = "";
         }
     }
 
@@ -73,6 +77,9 @@ public class TerminalManager : MonoBehaviour
         }
 
         terminalLog.text += "\r\nSELECTED " + selectedObject.name;
+        inputField.text = "";
+        folderName.text += selectedObject.name + ">";
+        fileList.text = "";
     }
 
     public void DeselectObject()

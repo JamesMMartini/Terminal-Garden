@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     public string terminalInput = "";
 
     public PlayerController player;
+    public TextFile_SO helpText;
+    public Text fileList;
 
     [Header("Time")]
     [SerializeField] float timeStep;
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
     {
         RunUpdate = false;
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+
+        fileList.text = "";
     }
 
     // Update is called once per frame
@@ -92,7 +97,8 @@ public class GameManager : MonoBehaviour
         }
         else if (terminalInput == "help")
         {
-
+            fileList.text = helpText.text;
+            returnString += "LISTING COMMAND REFERENCES";
         }
         else if (terminalInput.StartsWith("select"))
         {
@@ -105,6 +111,13 @@ public class GameManager : MonoBehaviour
             if (obj != null)
             {
                 terminal.SelectObject(obj, false);
+                List<string> files = terminal.selectedObject.GetComponent<Executables>().GetFiles();
+
+                fileList.text = "";
+                foreach (string file in files)
+                {
+                    fileList.text += file + "\r\n";
+                }
             }
             else
             {
@@ -144,9 +157,10 @@ public class GameManager : MonoBehaviour
                     objectList.Add(interactable);
             }
 
+            fileList.text = "INTERACTABLE OBJECTS WITHIN 40M:" + "\r\n";
             foreach (GameObject interactable in objectList)
             {
-                returnString += "\r\n" + interactable.name;
+                fileList.text += "\r\n" + interactable.name;
             }
         }
         else if (terminalInput == "ls")
@@ -156,10 +170,10 @@ public class GameManager : MonoBehaviour
                 returnString += "GETTING FILES IN OBJECT";
 
                 List<string> files = terminal.selectedObject.GetComponent<Executables>().GetFiles();
-
+                fileList.text = "";
                 foreach (string file in files)
                 {
-                    returnString += "\r\n" + file;
+                    fileList.text += file + "\r\n";
                 }
             }
             else

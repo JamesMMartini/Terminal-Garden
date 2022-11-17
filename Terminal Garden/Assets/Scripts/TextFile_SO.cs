@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextFile_SO : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[CreateAssetMenu(fileName = "New TextFile", menuName = "TextFile Data")]
+public class TextFile_SO : ScriptableObject
+{
+    [TextArea(10, 200)]
+    public string text;
 }
