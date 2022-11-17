@@ -140,7 +140,7 @@ MonoBehaviour:
   walking: 0
   rotation: 0
   character: {fileID: 355308148705736844}
-  speed: 1
+  speed: 1.5
   gravity: -10
   _terminalVelocity: -30
 --- !u!1 &7845608515403961768
