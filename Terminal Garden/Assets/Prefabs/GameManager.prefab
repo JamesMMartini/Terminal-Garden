@@ -47,5 +47,8 @@ MonoBehaviour:
   RunUpdate: 0
   terminalInput: 
   player: {fileID: 0}
+  helpText: {fileID: 0}
+  fileList: {fileID: 0}
+  turnDegrees: 30
   timeStep: 1
   terminal: {fileID: 0}

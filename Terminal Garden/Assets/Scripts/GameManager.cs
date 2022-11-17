@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public TextFile_SO helpText;
     public Text fileList;
 
+    [SerializeField] float turnDegrees;
+
     [Header("Time")]
     [SerializeField] public float timeStep;
     float timeCount;
@@ -79,14 +81,14 @@ public class GameManager : MonoBehaviour
         }
         else if (terminalInput == "turn l")
         {
-            float rotation = -15f;
+            float rotation = -turnDegrees;
             player.rotation = rotation;
             terminal.DeselectObject();
             returnString += "ROTATING " + rotation + " DEGREES";
         }
         else if (terminalInput == "turn r")
         {
-            float rotation = 15f;
+            float rotation = turnDegrees;
             player.rotation = rotation;
             terminal.DeselectObject();
             returnString += "ROTATING " + rotation + " DEGREES";
