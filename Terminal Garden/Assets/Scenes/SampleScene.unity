@@ -1482,7 +1482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 13316452489959523, guid: 06af7fbd93d24004e9d08b50c4a6fa5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 13316452489959523, guid: 06af7fbd93d24004e9d08b50c4a6fa5a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1520,6 +1520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Partial
       objectReference: {fileID: 0}
+    - target: {fileID: 3461629662462512639, guid: 06af7fbd93d24004e9d08b50c4a6fa5a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 289301614986012343, guid: ebfba60e9d1cc2445b3ea32ca0bf3738, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06af7fbd93d24004e9d08b50c4a6fa5a, type: 3}
 --- !u!1001 &4764965711074579836
