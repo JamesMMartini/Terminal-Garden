@@ -138,8 +138,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walking: 0
+  rotation: 0
   character: {fileID: 355308148705736844}
   speed: 1
+  gravity: -10
+  _terminalVelocity: -30
 --- !u!1 &7845608515403961768
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +304,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 476755807dedd4a44821131ce3a30135, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

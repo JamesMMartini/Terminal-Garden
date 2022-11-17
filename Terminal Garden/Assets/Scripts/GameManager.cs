@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public Text fileList;
 
     [Header("Time")]
-    [SerializeField] float timeStep;
+    [SerializeField] public float timeStep;
     float timeCount;
 
     [Header("Terminal")]
@@ -170,6 +170,7 @@ public class GameManager : MonoBehaviour
                 returnString += "GETTING FILES IN OBJECT";
 
                 List<string> files = terminal.selectedObject.GetComponent<Executables>().GetFiles();
+
                 fileList.text = "";
                 foreach (string file in files)
                 {
