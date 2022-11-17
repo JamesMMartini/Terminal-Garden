@@ -34,4 +34,11 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void LookAt(GameObject target)
+    {
+        Vector3 targetPos = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+
+        transform.LookAt(targetPos);
+    }
 }

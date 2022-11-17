@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: terminal
       value: 
       objectReference: {fileID: 52339657}
+    - target: {fileID: 7557562803995154697, guid: 42c3760436e702842866614fa2b409ed, type: 3}
+      propertyPath: timeStep
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7557562803995154698, guid: 42c3760436e702842866614fa2b409ed, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -218,6 +222,7 @@ MonoBehaviour:
   inputField: {fileID: 1786089197}
   terminalLog: {fileID: 432176206}
   selectedIndicator: {fileID: 1305993970}
+  selectedObject: {fileID: 0}
 --- !u!4 &52339658
 Transform:
   m_ObjectHideFlags: 0
@@ -345,6 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 180196516}
   - component: {fileID: 180196517}
+  - component: {fileID: 180196518}
   m_Layer: 0
   m_Name: Tower Partial
   m_TagString: Interactable
@@ -382,6 +388,19 @@ CapsuleCollider:
   m_Height: 12.42
   m_Direction: 1
   m_Center: {x: 0, y: 4.5, z: 0}
+--- !u!114 &180196518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180196515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca472730c0a63d45a52388dbf6bfcaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HasDelete: 1
 --- !u!1 &384295599
 GameObject:
   m_ObjectHideFlags: 0

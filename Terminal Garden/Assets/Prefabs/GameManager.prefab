@@ -47,4 +47,5 @@ MonoBehaviour:
   RunUpdate: 0
   terminalInput: 
   player: {fileID: 0}
-  timeStep: 0.5
+  timeStep: 1
+  terminal: {fileID: 0}

@@ -72,14 +72,14 @@ public class GameManager : MonoBehaviour
             terminal.DeselectObject();
             returnString += "STOPPING WALK";
         }
-        else if (terminalInput == "rotate l")
+        else if (terminalInput == "turn l")
         {
             float rotation = -15f;
             player.rotation = rotation;
             terminal.DeselectObject();
             returnString += "ROTATING " + rotation + " DEGREES";
         }
-        else if (terminalInput == "rotate r")
+        else if (terminalInput == "turn r")
         {
             float rotation = 15f;
             player.rotation = rotation;
@@ -93,6 +93,91 @@ public class GameManager : MonoBehaviour
         else if (terminalInput == "help")
         {
 
+        }
+        else if (terminalInput.StartsWith("select"))
+        {
+            string objName = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
+
+            returnString += "SELECTING " + objName;
+
+            GameObject obj = GameObject.Find(objName);
+
+            if (obj != null)
+            {
+                terminal.SelectObject(obj, false);
+            }
+            else
+            {
+                returnString += "\r\nUNABLE TO FIND " + objName;
+            }
+        }
+        else if (terminalInput.StartsWith("lookat"))
+        {
+            string objName = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
+
+            returnString += "LOOKINGAT " + objName;
+
+            GameObject obj = GameObject.Find(objName);
+
+            if (obj != null)
+            {
+                player.LookAt(obj);
+            }
+            else
+            {
+                returnString += "\r\nUNABLE TO FIND " + objName;
+            }
+        }
+        else if (terminalInput == "scan")
+        {
+            returnString += "RETURNING ALL OBJECTS WITHIN 40M";
+
+            GameObject[] allInteractable = GameObject.FindGameObjectsWithTag("Interactable");
+
+            List<GameObject> objectList = new List<GameObject>();
+
+            foreach (GameObject interactable in allInteractable)
+            {
+                Vector3 distToObj = interactable.transform.position - player.transform.position;
+
+                if (distToObj.magnitude < 40f)
+                    objectList.Add(interactable);
+            }
+
+            foreach (GameObject interactable in objectList)
+            {
+                returnString += "\r\n" + interactable.name;
+            }
+        }
+        else if (terminalInput == "ls")
+        {
+            if (terminal.selectedObject != null)
+            {
+                returnString += "GETTING FILES IN OBJECT";
+
+                List<string> files = terminal.selectedObject.GetComponent<Executables>().GetFiles();
+
+                foreach (string file in files)
+                {
+                    returnString += "\r\n" + file;
+                }
+            }
+            else
+            {
+                returnString += "\r\nPLEASE SELECT AN OBJECT TO VIEW ITS FILES";
+            }
+        }
+        else if (terminalInput.StartsWith("open"))
+        {
+            if (terminal.selectedObject != null)
+            {
+                string filename = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
+                returnString += "\r\n" + terminal.selectedObject.GetComponent<Executables>().OpenFile(filename);
+            }
+            else
+            {
+                returnString += "\r\nPLEASE SELECT AN OBJECT TO OPEN ITS FILES";
+            }
         }
         else
         {

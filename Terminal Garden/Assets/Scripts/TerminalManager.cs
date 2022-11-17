@@ -13,7 +13,7 @@ public class TerminalManager : MonoBehaviour
     [SerializeField] TMP_Text terminalLog;
     [SerializeField] GameObject selectedIndicator;
 
-    GameObject selectedObject;
+    public GameObject selectedObject;
 
     // Start is called before the first frame update
     void Start()
@@ -52,22 +52,25 @@ public class TerminalManager : MonoBehaviour
                 Transform objectHit = hit.transform;
                 if (objectHit.tag == "Interactable")
                 {
-                    SelectObject(objectHit.gameObject);
+                    SelectObject(objectHit.gameObject, true);
                 }
             }
         }
     }
 
-    void SelectObject(GameObject objSelected)
+    public void SelectObject(GameObject objSelected, bool clicked)
     {
         selectedObject = objSelected;
 
         Vector3 indicatorPos = Mouse.current.position.ReadValue();
         indicatorPos.y -= 30f;
 
-        selectedIndicator.SetActive(true);
-        selectedIndicator.transform.position = indicatorPos;
-        selectedIndicator.GetComponentInChildren<TMP_Text>().text = selectedObject.name;
+        if (clicked)
+        {
+            selectedIndicator.SetActive(true);
+            selectedIndicator.transform.position = indicatorPos;
+            selectedIndicator.GetComponentInChildren<TMP_Text>().text = selectedObject.name;
+        }
 
         terminalLog.text += "\r\nSELECTED " + selectedObject.name;
     }
@@ -76,11 +79,10 @@ public class TerminalManager : MonoBehaviour
     {
         if (selectedObject != null)
         {
-            terminalLog.text += "\r\nDESELECTED " + selectedObject.name; 
-
-            selectedObject = null;
-
-            selectedIndicator.SetActive(false);
+            terminalLog.text += "\r\nDESELECTED " + selectedObject.name;
         }
+        selectedObject = null;
+
+        selectedIndicator.SetActive(false);
     }
 }
