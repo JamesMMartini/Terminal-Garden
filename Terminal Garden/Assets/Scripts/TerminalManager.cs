@@ -10,10 +10,10 @@ public class TerminalManager : MonoBehaviour
     [SerializeField] Camera cam;
 
     [Header("UI Objects")]
-    [SerializeField] Text inputField;
-    [SerializeField] Text terminalLog;
-    [SerializeField] Text folderName;
-    [SerializeField] Text fileList;
+    [SerializeField] TMP_Text inputField;
+    [SerializeField] TMP_Text terminalLog;
+    [SerializeField] TMP_Text folderName;
+    [SerializeField] TMP_Text fileList;
     [SerializeField] GameObject selectedIndicator;
 
     public GameObject selectedObject;

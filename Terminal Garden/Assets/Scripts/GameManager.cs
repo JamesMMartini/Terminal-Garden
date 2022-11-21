@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerController player;
     public TextFile_SO helpText;
-    public Text fileList;
+    public TMP_Text fileList;
 
     [SerializeField] float turnDegrees;
 
