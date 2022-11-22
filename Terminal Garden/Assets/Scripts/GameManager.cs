@@ -172,12 +172,14 @@ public class GameManager : MonoBehaviour
             {
                 returnString += "GETTING FILES IN OBJECT";
 
-                List<string> files = terminal.selectedObject.GetComponent<Executables>().GetFiles();
+                File[] files = terminal.selectedObject.GetComponents<File>();
+
+                //List<string> files = terminal.selectedObject.GetComponent<Executables>().GetFiles();
 
                 fileList.text = "";
-                foreach (string file in files)
+                foreach (File file in files)
                 {
-                    fileList.text += file + "\r\n";
+                    fileList.text += file.FileName + file.FileType + "\r\n";
                 }
             }
             else
@@ -189,8 +191,19 @@ public class GameManager : MonoBehaviour
         {
             if (terminal.selectedObject != null)
             {
-                string filename = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
-                returnString += "\r\n" + terminal.selectedObject.GetComponent<Executables>().OpenFile(filename);
+                string file = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
+                string filename = file.Substring(0, file.IndexOf("."));
+                File objFile = terminal.selectedObject.GetComponent(filename) as File;
+
+                if (objFile != null)
+                {
+                    returnString += "\r\nOPENING " + file;
+                    objFile.Open();
+                }
+                else
+                {
+                    returnString += "\r\nUNABLE TO FIND FILE " + file + " IN SELECTED OBJECT";
+                }
             }
             else
             {

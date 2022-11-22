@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 13316452489959523}
   - component: {fileID: 13316452489959522}
-  - component: {fileID: 13316452489959521}
+  - component: {fileID: 6723895970902318505}
   m_Layer: 0
   m_Name: Tower Partial
   m_TagString: Interactable
@@ -48,7 +48,7 @@ CapsuleCollider:
   m_Height: 12.42
   m_Direction: 1
   m_Center: {x: 0, y: 4.5, z: 0}
---- !u!114 &13316452489959521
+--- !u!114 &6723895970902318505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,10 +57,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 13316452489959524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ca472730c0a63d45a52388dbf6bfcaa, type: 3}
+  m_Script: {fileID: 11500000, guid: c64ec189a1dbad24d9a77af6b3384968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HasDelete: 1
+  FileName: 
+  FileType: 
 --- !u!1001 &5676374450236892384
 PrefabInstance:
   m_ObjectHideFlags: 0
