@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
+  m_Name: Raccoon
+  m_EditorClassIdentifier: 
+  lines: "R:It\u2019s a lot different than last time you woke right. How long is
+    it?\r\nMC:It\u2019s..... 127 years ago.\r\nR:Yeah...A lot things happened. The
+    stone. The church. All the revolution things.\r\nMC:......\r\nR:But...There\u2019s
+    something wrong. People become....different. \r\nR:(chuckle) And I have no proof.
+    No one will believe me.\r\nMC:....I...believe you sir\r\nR:Sorry I said all the
+    things to you. I guess I just need someone to talk\r\nR:Go do the mission Conan.
+    I shall not waste your time.\r"

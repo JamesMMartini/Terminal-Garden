@@ -26,9 +26,20 @@ public class TerminalManager : MonoBehaviour
         Keyboard.current.onTextInput += OnTextInput;
     }
 
+    public void AdvanceDialogue(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (GameManager.Instance.DialogueManager.gameObject.activeInHierarchy)
+            {
+                GameManager.Instance.DialogueManager.AdvanceDialogue();
+            }
+        }
+    }
+
     private void OnTextInput(char ch)
     {
-        if (!char.IsControl(ch))
+        if (!char.IsControl(ch) && !GameManager.Instance.DialogueManager.gameObject.activeInHierarchy)
         {
             GameManager.Instance.terminalInput += ch;
             inputField.text = GameManager.Instance.terminalInput;

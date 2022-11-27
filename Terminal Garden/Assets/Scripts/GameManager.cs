@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; set; }
 
+    public DialogueManager DialogueManager;
+
     public bool RunUpdate;
     public string terminalInput = "";
 
@@ -24,7 +26,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Terminal")]
     [SerializeField] TerminalManager terminal;
-
+    [SerializeField] Conversation openingConversation;
+     
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -46,6 +49,8 @@ public class GameManager : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<PlayerController>();
 
         fileList.text = "";
+
+        DialogueManager.StartConversation(openingConversation.Lines);
     }
 
     // Update is called once per frame
@@ -191,18 +196,25 @@ public class GameManager : MonoBehaviour
         {
             if (terminal.selectedObject != null)
             {
-                string file = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
-                string filename = file.Substring(0, file.IndexOf("."));
-                File objFile = terminal.selectedObject.GetComponent(filename) as File;
+                try
+                {
+                    string file = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
+                    string filename = file.Substring(0, file.IndexOf("."));
+                    File objFile = terminal.selectedObject.GetComponent(filename) as File;
 
-                if (objFile != null)
-                {
-                    returnString += "\r\nOPENING " + file;
-                    objFile.Open();
+                    if (objFile != null)
+                    {
+                        returnString += "\r\nOPENING " + file;
+                        objFile.Open();
+                    }
+                    else
+                    {
+                        returnString += "\r\nUNABLE TO FIND FILE " + file + " IN SELECTED OBJECT";
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    returnString += "\r\nUNABLE TO FIND FILE " + file + " IN SELECTED OBJECT";
+                    returnString += "\r\n UNABLE TO RUN COMMAND. ENSURE FILE NAME IS CORRECT";
                 }
             }
             else

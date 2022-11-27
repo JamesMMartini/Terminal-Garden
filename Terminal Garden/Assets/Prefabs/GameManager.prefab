@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f97947875457244bc145ecb2b406bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialogueManager: {fileID: 0}
   RunUpdate: 0
   terminalInput: 
   player: {fileID: 0}
@@ -52,3 +53,4 @@ MonoBehaviour:
   turnDegrees: 30
   timeStep: 1
   terminal: {fileID: 0}
+  openingConversation: {fileID: 11400000, guid: 29a79d23b9c12bd4483a0620c7f6a949, type: 2}
