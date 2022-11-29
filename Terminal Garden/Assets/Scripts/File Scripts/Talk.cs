@@ -9,8 +9,11 @@ public class Talk : File
     // Start is called before the first frame update
     void Start()
     {
-        FileName = "Talk";
-        FileType = ".exe";
+        if (FileName == "")
+            FileName = "Talk";
+        
+        if (FileType == "")
+            FileType = ".exe";
     }
 
     public override string Open()

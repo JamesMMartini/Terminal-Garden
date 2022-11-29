@@ -15,8 +15,8 @@ public class DialogueManager : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        foreach (string line in newLines)
-            Debug.Log(line);
+        //foreach (string line in newLines)
+        //    Debug.Log(line);
 
         lines = newLines;
         activeLine = 0;

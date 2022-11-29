@@ -118,4 +118,17 @@ public class TerminalManager : MonoBehaviour
 
         selectedIndicator.SetActive(false);
     }
+
+    public void ShowInventory()
+    {
+        DeselectObject();
+
+        folderName.text = "WORLD>PLAYER INVENTORY";
+
+        string inventoryList = "";
+        foreach (GameObject gameObj in GameManager.Instance.player.Inventory)
+            inventoryList += "\r\n" + gameObj.name;
+
+        fileList.text = inventoryList;
+    }
 }

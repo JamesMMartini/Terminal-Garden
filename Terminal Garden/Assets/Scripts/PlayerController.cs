@@ -14,9 +14,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float gravity;
     [SerializeField] float _terminalVelocity;
 
+    public List<GameObject> Inventory;
+
     // Start is called before the first frame update
     void Start()
     {
+        Inventory = new List<GameObject>();
+
         walking = false;
     }
 
@@ -60,5 +64,11 @@ public class PlayerController : MonoBehaviour
         Vector3 targetPos = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
         transform.LookAt(targetPos);
+    }
+
+    public void CollectObject(GameObject gameObj)
+    {
+        gameObj.SetActive(false);
+        Inventory.Add(gameObj);
     }
 }

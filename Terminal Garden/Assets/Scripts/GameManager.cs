@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     float timeCount;
 
     [Header("Terminal")]
-    [SerializeField] TerminalManager terminal;
+    [SerializeField] public TerminalManager terminal;
     [SerializeField] Conversation openingConversation;
 
     // Parameter Stuff
@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
             {
                 Vector3 distToObj = interactable.transform.position - player.transform.position;
 
-                if (distToObj.magnitude < 40f)
+                if (distToObj.magnitude < 30f)
                     objectList.Add(interactable);
             }
 
