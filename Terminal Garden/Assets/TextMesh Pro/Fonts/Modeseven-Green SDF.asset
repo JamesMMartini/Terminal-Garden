@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Modeseven-L3n5 SDF
+  m_Name: Modeseven-Green SDF
   m_EditorClassIdentifier: 
-  hashCode: 575286768
+  hashCode: -1713743153
   material: {fileID: 326443999440522544}
-  materialHashCode: -372691376
+  materialHashCode: -1128674417
   m_Version: 1.1.0
   m_SourceFontFileGUID: c0eaeb6e4748344c2a87979fd1196ed4
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: c0eaeb6e4748344c2a87979fd1196ed4, type: 3}
