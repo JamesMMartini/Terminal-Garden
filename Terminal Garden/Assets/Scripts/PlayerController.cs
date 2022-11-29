@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public bool walking;
     public float rotation;
-    float _verticalVelocity;
+    public float _verticalVelocity;
 
     [Header("Movement Fields")]
     [SerializeField] CharacterController character;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
             if (!character.isGrounded)
             {
                 // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
-                if (_verticalVelocity < _terminalVelocity)
+                if (_verticalVelocity > _terminalVelocity)
                 {
                     _verticalVelocity += gravity * GameManager.Instance.timeStep;
                 }
@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
                 _verticalVelocity = 0f;
             }
         }
+        Debug.Log(character.isGrounded);
     }
 
     public void LookAt(GameObject target)
