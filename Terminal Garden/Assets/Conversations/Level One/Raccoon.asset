@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: Raccoon
   m_EditorClassIdentifier: 
-  lines: "R:It\u2019s a lot different than last time you woke right. How long is
-    it?\r\nMC:It\u2019s..... 127 years ago.\r\nR:Yeah...A lot things happened. The
-    stone. The church. All the revolution things.\r\nMC:......\r\nR:But...There\u2019s
-    something wrong. People become....different. \r\nR:(chuckle) And I have no proof.
-    No one will believe me.\r\nMC:....I...believe you sir\r\nR:Sorry I said all the
-    things to you. I guess I just need someone to talk\r\nR:Go do the mission Conan.
-    I shall not waste your time.\r"
+  lines: "Mr. Raccoon:It\u2019s a lot different than last time you woke right. How
+    long is it?\r\nConan:It\u2019s..... 127 years ago.\r\nMr. Raccoon:Yeah...A lot
+    things happened. The stone. The church. All the revolution things.\r\nConan:......\r\nMr.
+    Raccoon:But...There\u2019s something wrong. People become....different. \r\nMr.
+    Raccoon:(chuckle) And I have no proof. No one will believe me.\r\nConan:....I...believe
+    you sir\r\nMr. Raccoon:Sorry I said all the things to you. I guess I just need
+    someone to talk\r\nMr. Raccoon:Go do the mission Conan. I shall not waste your
+    time.\r"

@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     [Header("Terminal")]
     [SerializeField] TerminalManager terminal;
     [SerializeField] Conversation openingConversation;
+
+    // Parameter Stuff
+    public File seekingParameter;
      
     private void Awake()
     {
@@ -205,7 +208,7 @@ public class GameManager : MonoBehaviour
                     if (objFile != null)
                     {
                         returnString += "\r\nOPENING " + file;
-                        objFile.Open();
+                        returnString += "\r\n" + objFile.Open();
                     }
                     else
                     {
@@ -229,5 +232,28 @@ public class GameManager : MonoBehaviour
 
         terminalInput = "";
         return returnString;
+    }
+
+    public string EnterParameter()
+    {
+        terminalInput.Trim();
+
+        if (terminalInput != "close")
+        {
+            string returnString = seekingParameter.Execute(terminalInput);
+            terminalInput = "";
+            return returnString;
+        }
+        else
+        {
+            seekingParameter = null;
+            terminalInput = "";
+            return "CLOSING PROGRAM";
+        }
+    }
+
+    public void WriteToFileList(string writeToFileList)
+    {
+        fileList.text = writeToFileList;
     }
 }

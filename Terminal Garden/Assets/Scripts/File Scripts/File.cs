@@ -11,4 +11,9 @@ public class File : MonoBehaviour
     {
         return "EMPTY FILE";
     }
+
+    public virtual string Execute(string parameter)
+    {
+        return "NOTHING TO EXECUTE";
+    }
 }

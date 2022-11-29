@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
                 _verticalVelocity = 0f;
             }
         }
-        Debug.Log(character.isGrounded);
+        //Debug.Log(character.isGrounded);
     }
 
     public void LookAt(GameObject target)

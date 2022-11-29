@@ -50,8 +50,16 @@ public class TerminalManager : MonoBehaviour
     {
         if (context.performed)
         {
-            terminalLog.text += "\r\n" + GameManager.Instance.ExecuteCommand();
-            inputField.text = "";
+            if (GameManager.Instance.seekingParameter == null)
+            {
+                terminalLog.text += "\r\n" + GameManager.Instance.ExecuteCommand();
+                inputField.text = "";
+            }
+            else
+            {
+                terminalLog.text += "\r\n" + GameManager.Instance.EnterParameter();
+                inputField.text = "";
+            }
         }
     }
 
@@ -75,6 +83,10 @@ public class TerminalManager : MonoBehaviour
 
     public void SelectObject(GameObject objSelected, bool clicked)
     {
+        // Deselect the current object if necessary
+        if (selectedObject != null)
+            DeselectObject();
+        
         selectedObject = objSelected;
 
         Vector3 indicatorPos = Mouse.current.position.ReadValue();
@@ -100,6 +112,9 @@ public class TerminalManager : MonoBehaviour
             terminalLog.text += "\r\nDESELECTED " + selectedObject.name;
         }
         selectedObject = null;
+
+        folderName.text = "WORLD>";
+        fileList.text = "";
 
         selectedIndicator.SetActive(false);
     }
