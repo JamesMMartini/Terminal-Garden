@@ -72,6 +72,12 @@ public class TerminalManager : MonoBehaviour
             GameManager.Instance.terminalInput += ch;
             inputField.text = GameManager.Instance.terminalInput + "_";
         }
+
+        if (GameManager.Instance.terminalInput == " ")
+        {
+            GameManager.Instance.terminalInput = "";
+            inputField.text = GameManager.Instance.terminalInput + "_";
+        }
     }
 
     public void Return(InputAction.CallbackContext context)
