@@ -27,12 +27,15 @@ MonoBehaviour:
     scan - SCAN ALL INTERACTBLE OBJECTS WITHIN 40M
 
     cd
-    + [object name] - OPEN THE OBJECT FOLDER
+    + <object name> - OPEN THE OBJECT FOLDER
+
+    click on object - OPEN THE OBJECT
+    FOLDER
 
     inventory - LIST ALL ITEMS IN INVENTORY
 
-    [file
-    name] - OPEN OR RUN FILE
+    <file name> - OPEN OR
+    RUN FILE
 
     exit - EXIT CURRENT FOLDER/FILE
 
