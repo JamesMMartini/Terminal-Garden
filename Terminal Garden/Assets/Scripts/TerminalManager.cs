@@ -26,6 +26,22 @@ public class TerminalManager : MonoBehaviour
         Keyboard.current.onTextInput += OnTextInput;
     }
 
+    private void Update()
+    {
+        if (GameManager.Instance.RunUpdate)
+        {
+            // Determine if we need to blink the cursor
+            if (inputField.text.EndsWith("_"))
+            {
+                inputField.text = GameManager.Instance.terminalInput;
+            }
+            else
+            {
+                inputField.text = GameManager.Instance.terminalInput + "_";
+            }
+        }
+    }
+
     public void AdvanceDialogue(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -37,12 +53,24 @@ public class TerminalManager : MonoBehaviour
         }
     }
 
+    public void Backspace(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (GameManager.Instance.terminalInput.Length > 0)
+            {
+                GameManager.Instance.terminalInput = GameManager.Instance.terminalInput.Substring(0, GameManager.Instance.terminalInput.Length - 1);
+                inputField.text = GameManager.Instance.terminalInput + "_";
+            }
+        }
+    }
+
     private void OnTextInput(char ch)
     {
         if (!char.IsControl(ch) && !GameManager.Instance.DialogueManager.gameObject.activeInHierarchy)
         {
             GameManager.Instance.terminalInput += ch;
-            inputField.text = GameManager.Instance.terminalInput;
+            inputField.text = GameManager.Instance.terminalInput + "_";
         }
     }
 
@@ -100,7 +128,7 @@ public class TerminalManager : MonoBehaviour
         }
 
         terminalLog.text += "\r\nSELECTED " + selectedObject.name;
-        inputField.text = "";
+        //inputField.text = "";
         folderName.text += selectedObject.name + ">";
         fileList.text = "";
     }

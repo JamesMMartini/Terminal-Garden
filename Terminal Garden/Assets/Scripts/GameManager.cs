@@ -76,13 +76,13 @@ public class GameManager : MonoBehaviour
         terminalInput.Trim();
         string returnString = terminalInput + " - ";
 
-        if (terminalInput == "walk")
+        if (terminalInput == "w")
         {
             player.walking = true;
             terminal.DeselectObject();
             returnString += "NOW WALKING";
         }
-        else if (terminalInput == "stop")
+        else if (terminalInput == "s")
         {
             player.walking = false;
             terminal.DeselectObject();
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
             fileList.text = helpText.text;
             returnString += "LISTING COMMAND REFERENCES";
         }
-        else if (terminalInput.StartsWith("select"))
+        else if (terminalInput.StartsWith("cd"))
         {
             string objName = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
 
@@ -122,12 +122,13 @@ public class GameManager : MonoBehaviour
             if (obj != null)
             {
                 terminal.SelectObject(obj, false);
-                List<string> files = terminal.selectedObject.GetComponent<Executables>().GetFiles();
+
+                File[] files = terminal.selectedObject.GetComponents<File>();
 
                 fileList.text = "";
-                foreach (string file in files)
+                foreach (File file in files)
                 {
-                    fileList.text += file + "\r\n";
+                    fileList.text += file.FileName + file.FileType + "\r\n";
                 }
             }
             else
@@ -195,13 +196,13 @@ public class GameManager : MonoBehaviour
                 returnString += "\r\nPLEASE SELECT AN OBJECT TO VIEW ITS FILES";
             }
         }
-        else if (terminalInput.StartsWith("open"))
+        else if (terminalInput.StartsWith("./"))
         {
             if (terminal.selectedObject != null)
             {
                 try
                 {
-                    string file = terminalInput.Substring(terminalInput.IndexOf(" ") + 1);
+                    string file = terminalInput.Substring(terminalInput.IndexOf("/") + 1);
                     string filename = file.Substring(0, file.IndexOf("."));
                     File objFile = terminal.selectedObject.GetComponent(filename) as File;
 
