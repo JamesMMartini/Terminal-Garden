@@ -14,28 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: 'COMMAND REFERENCES:
 
-    walk - MOVE IN CURRENT DIRECTION
+    w - MOVE IN CURRENT DIRECTION
 
-    stop - STOP
-    ALL MOVEMENT
+    s - STOP ALL
+    MOVEMENT
 
-    turn l/turn r - ROTATE 15 DEGREES LEFT/RIGHT
+    a/d - ROTATE 30 DEGREES LEFT/RIGHT
 
-    lookat +
-    object name -TURN TO LOOK AT AN OBJECT
+    lookat + object name -TURN
+    TO LOOK AT AN OBJECT
 
-    scan - SCAN ALL INTERACTBLE OBJECTS
-    WITHIN 40M
+    scan - SCAN ALL INTERACTBLE OBJECTS WITHIN 40M
 
-    select + object name - OPEN THE OBJECT FOLDER
+    cd
+    + [object name] - OPEN THE OBJECT FOLDER
 
-    ls - LISTING
-    ALL FILES IN CURRENT FOLDER
+    inventory - LIST ALL ITEMS IN INVENTORY
 
-    ls inventory - LIST ALL ITEMS IN INVENTORY
-
-    open
-    + file name - OPEN OR RUN FILE
+    [file
+    name] - OPEN OR RUN FILE
 
     exit - EXIT CURRENT FOLDER/FILE
 
