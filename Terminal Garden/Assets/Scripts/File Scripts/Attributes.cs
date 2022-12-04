@@ -8,13 +8,24 @@ public class Attributes : File
 
     void Start()
     {
-        FileName = "Attributes";
+        FileName = "attributes";
         FileType = ".txt";
     }
 
     public string[] GetAttributes()
     {
         return attributes;
+    }
+
+    public void AddAttribute(string att)
+    {
+        string[] atts = new string[attributes.Length + 1];
+        for (int i = 0; i < attributes.Length; i++)
+            atts[i] = attributes[i];
+
+        atts[atts.Length - 1] = att;
+
+        attributes = atts;
     }
 
     public override string Open()

@@ -6,11 +6,14 @@ public class Water : File
 {
     bool watered;
 
+    public bool WateredSuccessfully;
+
     void Start()
     {
         watered = false;
+        WateredSuccessfully = false;
 
-        FileName = "Water";
+        FileName = "water";
         FileType = ".exe";
     }
 
@@ -25,29 +28,50 @@ public class Water : File
     {
         if (!watered)
         {
-            GameObject parameterObejct = GameObject.Find(parameter);
+            GameObject parameterObject = null;
 
-            if (parameterObejct != null)
+            foreach (GameObject ob in GameManager.Instance.player.Inventory)
             {
-                Attributes atts = parameterObejct.GetComponent<Attributes>();
+                if (ob.name == parameter)
+                    parameterObject = ob;
+            }
+
+            if (parameterObject != null)
+            {
+                Attributes atts = parameterObject.GetComponent<Attributes>();
                 if (atts != null)
                 {
                     string[] attsString = atts.GetAttributes();
 
-                    bool hasWater = false;
+                    bool hasLiquid = false;
                     foreach (string a in attsString)
-                        if (a == "Water")
-                            hasWater = true;
+                        if (a == "liquid")
+                            hasLiquid = true;
 
-                    if (hasWater)
+                    if (hasLiquid)
                     {
+                        Collect collect = GetComponent<Collect>();
+
+                        if (parameterObject.name == "water")
+                        {
+                            WateredSuccessfully = true;
+                            collect.GetComponent<Attributes>().AddAttribute("healthy");
+                        }
+                        else
+                        {
+                            WateredSuccessfully = false;
+                            collect.GetComponent<Attributes>().AddAttribute("corrupted");
+                        }
+
+                        GameManager.Instance.player.Inventory.Remove(parameterObject);
+                        GetComponent<Collect>().enabled = true;
                         watered = true;
                         GameManager.Instance.seekingParameter = null;
                         return "SUCCESSFULY WATERED TARGET. CLOSING PROGRAM";
                     }
                     else
                     {
-                        return "WATER NOT FOUND ON OBJECT. PLEASE ENTER VALID WATER OBJECT";
+                        return "LIQUID NOT FOUND ON OBJECT. PLEASE ENTER VALID LIQUID OBJECT";
                     }
                 }
                 else
@@ -57,7 +81,7 @@ public class Water : File
             }
             else
             {
-                return "OBJECT NOT FOUND. PLEASE ENTER VALID OBJECT";
+                return "OBJECT NOT FOUND IN PLAYER INVENTORY";
             }
         }
         else

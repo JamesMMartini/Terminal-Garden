@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Talk : File
 {
-    [SerializeField] Conversation dialogueLines;
+    [SerializeField] public Conversation dialogueLines;
 
     // Start is called before the first frame update
     void Start()
     {
         if (FileName == "")
-            FileName = "Talk";
+            FileName = "talk";
         
         if (FileType == "")
             FileType = ".exe";

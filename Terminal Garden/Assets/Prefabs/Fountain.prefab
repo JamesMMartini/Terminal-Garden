@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4459703067056709437}
+  - component: {fileID: 7631567583967244879}
   m_Layer: 0
-  m_Name: Water
+  m_Name: water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,6 +32,22 @@ Transform:
   m_Father: {fileID: 7417589197299056215}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7631567583967244879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105209337398341733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703029f0b9402b7419c9ad27dd55b96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileName: 
+  FileType: 
+  attributes:
+  - liquid
 --- !u!1 &7023974322299690659
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +181,7 @@ GameObject:
   - component: {fileID: -3466926690842538013}
   - component: {fileID: -4017510286038824698}
   m_Layer: 0
-  m_Name: Fountain
+  m_Name: fountain
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +283,7 @@ MonoBehaviour:
   FileName: 
   FileType: 
   attributes:
-  - Water
+  - water
 --- !u!114 &-4017510286038824698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,4 +298,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FileName: 
   FileType: 
+  singular: 0
   collectible: {fileID: 0}

@@ -84,15 +84,18 @@ public class TerminalManager : MonoBehaviour
     {
         if (context.performed)
         {
-            if (GameManager.Instance.seekingParameter == null)
+            if (!GameManager.Instance.DialogueManager.gameObject.activeInHierarchy)
             {
-                terminalLog.text += "\r\n" + GameManager.Instance.ExecuteCommand();
-                inputField.text = "";
-            }
-            else
-            {
-                terminalLog.text += "\r\n" + GameManager.Instance.EnterParameter();
-                inputField.text = "";
+                if (GameManager.Instance.seekingParameter == null)
+                {
+                    terminalLog.text += "\r\n" + GameManager.Instance.ExecuteCommand();
+                    inputField.text = "";
+                }
+                else
+                {
+                    terminalLog.text += "\r\n" + GameManager.Instance.EnterParameter();
+                    inputField.text = "";
+                }
             }
         }
     }
@@ -110,6 +113,14 @@ public class TerminalManager : MonoBehaviour
                 if (objectHit.tag == "Interactable")
                 {
                     SelectObject(objectHit.gameObject, true);
+
+                    File[] files = selectedObject.GetComponents<File>();
+
+                    fileList.text = "";
+                    foreach (File file in files)
+                    {
+                        fileList.text += file.FileName + file.FileType + "\r\n";
+                    }
                 }
             }
         }

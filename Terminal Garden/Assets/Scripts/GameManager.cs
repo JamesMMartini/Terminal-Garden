@@ -88,23 +88,23 @@ public class GameManager : MonoBehaviour
             terminal.DeselectObject();
             returnString += "STOPPING WALK";
         }
-        else if (terminalInput == "turn l")
+        else if (terminalInput == "a")
         {
             float rotation = -turnDegrees;
             player.rotation = rotation;
             terminal.DeselectObject();
             returnString += "ROTATING " + rotation + " DEGREES";
         }
-        else if (terminalInput == "turn r")
+        else if (terminalInput == "d")
         {
             float rotation = turnDegrees;
             player.rotation = rotation;
             terminal.DeselectObject();
             returnString += "ROTATING " + rotation + " DEGREES";
         }
-        else if (terminalInput == "inspect")
+        else if (terminalInput == "inventory")
         {
-            
+            terminal.ShowInventory();
         }
         else if (terminalInput == "help")
         {
@@ -204,7 +204,14 @@ public class GameManager : MonoBehaviour
                 {
                     string file = terminalInput.Substring(terminalInput.IndexOf("/") + 1);
                     string filename = file.Substring(0, file.IndexOf("."));
-                    File objFile = terminal.selectedObject.GetComponent(filename) as File;
+                    File objFile = null;
+
+                    File[] filesInObj = terminal.selectedObject.GetComponents<File>();
+                    foreach (File f in filesInObj)
+                    {
+                        if (f.FileName == filename)
+                            objFile = f;
+                    }
 
                     if (objFile != null)
                     {

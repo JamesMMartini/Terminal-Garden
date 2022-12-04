@@ -5,12 +5,14 @@ using UnityEngine;
 public class Collect : File
 {
     [SerializeField] bool singular;
-    [SerializeField] GameObject collectible;
+    [SerializeField] public GameObject collectible;
+
+    bool collected;
 
     // Start is called before the first frame update
     void Start()
     {
-        FileName = "Collect";
+        FileName = "collect";
         FileType = ".exe";
     }
 
@@ -18,16 +20,21 @@ public class Collect : File
     {
         string returnStr = "";
 
-        if (collectible != null)
+        if (!collected)
         {
+            GameObject returnObject = Instantiate(collectible);
+
+            returnObject.name = collectible.name;
+
             returnStr = collectible.name + " ADDED TO INVENTORY";
-
-            GameManager.Instance.player.CollectObject(collectible);
-
+            GameManager.Instance.player.CollectObject(returnObject);
             GameManager.Instance.terminal.ShowInventory();
 
             if (singular)
-                collectible = null;
+            {
+                collected = true;
+                gameObject.SetActive(false);
+            }
 
             return returnStr;
         }
