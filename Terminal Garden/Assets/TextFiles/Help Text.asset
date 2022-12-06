@@ -34,9 +34,12 @@ MonoBehaviour:
 
     inventory - LIST ALL ITEMS IN INVENTORY
 
-    <file name> - OPEN OR
-    RUN FILE
+    ./ + <file name> - OPEN
+    OR RUN FILE
 
-    exit - EXIT CURRENT FOLDER/FILE
+    <object name> - PASS OBJECT IN INVENTORY IF EXIST
+
+    exit
+    - EXIT CURRENT FOLDER/FILE
 
 '
