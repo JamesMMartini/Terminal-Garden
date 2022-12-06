@@ -119,7 +119,8 @@ public class TerminalManager : MonoBehaviour
                     fileList.text = "";
                     foreach (File file in files)
                     {
-                        fileList.text += file.FileName + file.FileType + "\r\n";
+                        if (file.enabled)
+                            fileList.text += file.FileName + file.FileType + "\r\n";
                     }
                 }
             }

@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Water : File
+public class Repair : File
 {
-    bool watered;
+    public bool repaired;
+    public bool RepairedSuccessfully;
 
-    public bool WateredSuccessfully;
+    [SerializeField] Sprite repairedSprite;
+    [SerializeField] Sprite brokenSprite;
 
     void Start()
     {
-        watered = false;
-        WateredSuccessfully = false;
+        if (!repaired)
+        {
+            GetComponent<SpriteRenderer>().sprite = brokenSprite;
+            GetComponent<Collect>().enabled = true;
+        }
 
-        FileName = "water";
+        FileName = "repair";
         FileType = ".exe";
     }
 
@@ -21,12 +26,12 @@ public class Water : File
     {
         GameManager.Instance.seekingParameter = this;
 
-        return "PLEASE PASS WATER OBJECT";
+        return "PLEASE PASS MATERIALS";
     }
 
     public override string Execute(string parameter)
     {
-        if (!watered)
+        if (!repaired)
         {
             GameObject parameterObject = null;
 
@@ -43,35 +48,37 @@ public class Water : File
                 {
                     string[] attsString = atts.GetAttributes();
 
-                    bool hasLiquid = false;
+                    bool hasWood = false;
+                    bool broken = false;
                     foreach (string a in attsString)
-                        if (a == "liquid")
-                            hasLiquid = true;
-
-                    if (hasLiquid)
                     {
-                        Collect collect = GetComponent<Collect>();
+                        if (a == "wood")
+                            hasWood = true;
+                        else if (a == "broken")
+                            broken = true;
+                    }
 
-                        if (parameterObject.name == "water")
+                    if (hasWood)
+                    {
+                        if (!broken)
                         {
-                            WateredSuccessfully = true;
-                            collect.collectible.GetComponent<Attributes>().AddAttribute("healthy");
+                            RepairedSuccessfully = true;
                         }
                         else
                         {
-                            WateredSuccessfully = false;
-                            collect.collectible.GetComponent<Attributes>().AddAttribute("corrupted");
+                            RepairedSuccessfully = false;
                         }
 
                         GameManager.Instance.player.Inventory.Remove(parameterObject);
-                        GetComponent<Collect>().enabled = true;
-                        watered = true;
+                        GetComponent<Collect>().enabled = false;
+                        GetComponent<SpriteRenderer>().sprite = repairedSprite;
+                        repaired = true;
                         GameManager.Instance.seekingParameter = null;
-                        return "SUCCESSFULY WATERED TARGET. CLOSING PROGRAM";
+                        return "SUCCESSFULY REPAIRED TARGET. CLOSING PROGRAM";
                     }
                     else
                     {
-                        return "LIQUID NOT FOUND ON OBJECT. PLEASE ENTER VALID LIQUID OBJECT";
+                        return "WOOD NOT FOUND ON OBJECT. PLEASE ENTER VALID WOOD OBJECT";
                     }
                 }
                 else
@@ -86,7 +93,7 @@ public class Water : File
         }
         else
         {
-            return "OBJECT ALREADY WATERED";
+            return "OBJECT ALREADY REPAIRED";
         }
     }
 }

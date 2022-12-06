@@ -7,6 +7,8 @@ public class DogmanQuest : File
     [SerializeField] Conversation success;
     [SerializeField] Conversation failure;
     [SerializeField] Conversation notAccepted;
+    [SerializeField] Sprite happySprite;
+    [SerializeField] Sprite scaredSprite;
 
     GameObject given;
 
@@ -55,6 +57,7 @@ public class DogmanQuest : File
                 if (healthy)
                 {
                     GameManager.Instance.DialogueManager.StartConversation(success.Lines);
+                    GetComponent<SpriteRenderer>().sprite = happySprite;
                     GameManager.Instance.seekingParameter = null;
 
                     gameObject.GetComponent<Talk>().dialogueLines = success;
@@ -62,6 +65,7 @@ public class DogmanQuest : File
                 else
                 {
                     GameManager.Instance.DialogueManager.StartConversation(failure.Lines);
+                    GetComponent<SpriteRenderer>().sprite = scaredSprite;
                     GameManager.Instance.seekingParameter = null;
 
                     gameObject.GetComponent<Talk>().dialogueLines = failure;

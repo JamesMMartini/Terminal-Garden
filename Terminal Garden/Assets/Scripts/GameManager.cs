@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour
                             objFile = f;
                     }
 
-                    if (objFile != null)
+                    if (objFile != null && objFile.enabled)
                     {
                         returnString += "\r\nOPENING " + file;
                         returnString += "\r\n" + objFile.Open();
