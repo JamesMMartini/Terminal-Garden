@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1425507698226496198}
   - component: {fileID: 1425507698226496195}
   - component: {fileID: 1425507698226496194}
+  - component: {fileID: 1159089498003200504}
   m_Layer: 0
   m_Name: Dandelion
   m_TagString: Interactable
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FileName: 
   FileType: 
-  dialogueLines: {fileID: 11400000, guid: c4ec4584b6f80f244b158e362eaa5355, type: 2}
+  dialogueLines: {fileID: 11400000, guid: c091fd9a430715942b155edbf08d7ed2, type: 2}
 --- !u!65 &1425507698226496194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -127,3 +128,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.91, y: 11.2, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1159089498003200504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425507698226496199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb980ad087e3544a87cab7da881972f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileName: 
+  FileType: 
+  success: {fileID: 11400000, guid: 7266469ad1783f24da638c86ec118b3e, type: 2}
+  failure: {fileID: 11400000, guid: 697d6f138d02bb14d8494d218310acbe, type: 2}
+  notAccepted: {fileID: 11400000, guid: b15c66f81ec565149879dbc53cb9b7ec, type: 2}
+  goodResult: {fileID: 0}
+  badResult: {fileID: 0}

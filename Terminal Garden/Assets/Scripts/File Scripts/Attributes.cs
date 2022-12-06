@@ -34,7 +34,7 @@ public class Attributes : File
         foreach (string att in attributes)
             fileListWrite += "\r\n" + att;
 
-        GameManager.Instance.WriteToFileList(fileListWrite);
+        GameManager.Instance.terminal.WriteToFileList("attributes", fileListWrite);
 
         return "WRITING ATTRIBUTES TO FILE LIST";
     }

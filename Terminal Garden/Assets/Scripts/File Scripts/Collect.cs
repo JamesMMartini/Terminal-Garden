@@ -12,8 +12,15 @@ public class Collect : File
     // Start is called before the first frame update
     void Start()
     {
-        FileName = "collect";
-        FileType = ".exe";
+        if (FileName == "")
+        {
+            FileName = "collect";
+        }
+
+        if (FileType == "")
+        {
+            FileType = ".exe";
+        }
     }
 
     public override string Open()
@@ -33,7 +40,7 @@ public class Collect : File
             if (singular)
             {
                 collected = true;
-                gameObject.SetActive(false);
+                collectible.gameObject.SetActive(false);
             }
 
             return returnStr;

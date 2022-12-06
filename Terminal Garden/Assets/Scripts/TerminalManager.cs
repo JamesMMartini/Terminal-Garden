@@ -176,4 +176,11 @@ public class TerminalManager : MonoBehaviour
 
         fileList.text = inventoryList;
     }
+
+    public void WriteToFileList(string fileTitle, string writeToFileList)
+    {
+        folderName.text = "WORLD>" + fileTitle;
+        fileList.text = writeToFileList;
+    }
+
 }

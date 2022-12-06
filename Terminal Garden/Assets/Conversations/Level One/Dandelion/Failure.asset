@@ -10,8 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
-  m_Name: Sad
+  m_Name: Failure
   m_EditorClassIdentifier: 
-  lines: 'Dogman:I''m sad!
-
-    Dogman:There''s no beauty in my life =('
+  lines: Dandelion:Oh! This is perfect! Everyone's going to crazy for this!

@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
-  m_Name: Sad
+  m_Name: PolishAltar
   m_EditorClassIdentifier: 
-  lines: 'Dogman:I''m sad!
+  lines: 'Mr. Raccoon:Could you polish the altar? It''s been looking a little dirty
+    lately. I have some cleanser if you need it.
 
-    Dogman:There''s no beauty in my life =('
+    Mr. Raccoon:Thanks =P'

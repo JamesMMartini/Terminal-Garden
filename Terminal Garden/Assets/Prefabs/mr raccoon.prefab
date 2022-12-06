@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 515329219896315904}
   - component: {fileID: 515329219896315909}
   - component: {fileID: 515329219896315908}
+  - component: {fileID: -8520562858612970300}
+  - component: {fileID: 3567371078351907408}
   m_Layer: 0
   m_Name: mr raccoon
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 7.81, y: 0.271, z: 2.18}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2344740165308426894}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -127,3 +130,82 @@ MonoBehaviour:
   FileName: 
   FileType: 
   dialogueLines: {fileID: 11400000, guid: de655b67222e3c342981058111988e5d, type: 2}
+--- !u!114 &-8520562858612970300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515329219896315905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e553d2cfdea7347a9c16abed453029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileName: cleanaltar
+  FileType: .exe
+  dialogueLines: {fileID: 11400000, guid: 22396fe2b2529444e9718f9a0a3d8f9f, type: 2}
+--- !u!114 &3567371078351907408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515329219896315905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d4d304c26a79a4eaefa71cdf2ed80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileName: getcleanser
+  FileType: .exe
+  singular: 1
+  collectible: {fileID: 2798856120669443195}
+--- !u!1 &2798856120669443195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2344740165308426894}
+  - component: {fileID: 3692686574007983188}
+  m_Layer: 0
+  m_Name: cleanser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2344740165308426894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798856120669443195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 515329219896315906}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3692686574007983188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798856120669443195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703029f0b9402b7419c9ad27dd55b96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileName: 
+  FileType: 
+  attributes:
+  - liquid

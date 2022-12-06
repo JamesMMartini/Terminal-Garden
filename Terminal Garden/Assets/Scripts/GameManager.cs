@@ -246,7 +246,7 @@ public class GameManager : MonoBehaviour
     {
         terminalInput.Trim();
 
-        if (terminalInput != "close")
+        if (terminalInput != "exit")
         {
             string returnString = seekingParameter.Execute(terminalInput);
             terminalInput = "";
@@ -258,10 +258,5 @@ public class GameManager : MonoBehaviour
             terminalInput = "";
             return "CLOSING PROGRAM";
         }
-    }
-
-    public void WriteToFileList(string writeToFileList)
-    {
-        fileList.text = writeToFileList;
     }
 }
