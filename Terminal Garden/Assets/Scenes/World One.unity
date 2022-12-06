@@ -1434,7 +1434,7 @@ Transform:
   - {fileID: 1308858306}
   - {fileID: 1377940194}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &102597536
 GameObject:
@@ -8655,7 +8655,7 @@ Transform:
   - {fileID: 1040475813}
   - {fileID: 1174200162}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1125350778
 PrefabInstance:
@@ -14906,7 +14906,7 @@ Transform:
   m_Children:
   - {fileID: 543450653654484398}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2065609657
 GameObject:
@@ -15398,6 +15398,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 515329219896315907, guid: 77eace5e68a5dbf498f1acabc125bee1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 58e34a9a3761d4a5bba41691ae882ffd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77eace5e68a5dbf498f1acabc125bee1, type: 3}
 --- !u!4 &543450651979956785 stripped
@@ -16202,6 +16206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dogman
       objectReference: {fileID: 0}
+    - target: {fileID: 7598698300755121233, guid: e8afbbbb37a2908458ef0805a1c9837d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7598698300755121238, guid: e8afbbbb37a2908458ef0805a1c9837d, type: 3}
       propertyPath: m_RootOrder
       value: 17
