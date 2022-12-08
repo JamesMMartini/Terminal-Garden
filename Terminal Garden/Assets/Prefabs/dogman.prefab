@@ -147,3 +147,4 @@ MonoBehaviour:
   notAccepted: {fileID: 11400000, guid: a87aeea9594e1184ba5c3fdaadea40ea, type: 2}
   happySprite: {fileID: 21300000, guid: eb477cde2790c5e4eaad9d73e8277433, type: 3}
   scaredSprite: {fileID: 21300000, guid: c2064c87da37f1640b3793c5c064eec3, type: 3}
+  QuestName: Make Dogman happy

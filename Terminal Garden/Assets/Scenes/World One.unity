@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0007991221, g: 0.0041676136, b: 0.020062326, a: 1}
+  m_IndirectSpecularColor: {r: 0.0008020329, g: 0.004175146, b: 0.020073427, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: timeStep
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7557562803995154697, guid: 42c3760436e702842866614fa2b409ed, type: 3}
+      propertyPath: questListTMP
+      value: 
+      objectReference: {fileID: 1047375551}
     - target: {fileID: 7557562803995154697, guid: 42c3760436e702842866614fa2b409ed, type: 3}
       propertyPath: DialogueManager
       value: 
@@ -1220,6 +1224,7 @@ MonoBehaviour:
   FileName: 
   FileType: 
   CleanedSuccessfully: 0
+  QuestName: Clean the altar
 --- !u!1001 &74666395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5170,7 +5175,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5eba7d2024996c46b090d04ddd5044a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5189,8 +5194,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515921309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.41, y: 2.255, z: 56.25}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: 58.334, y: 1.755, z: 55.298}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5207,7 +5212,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1.78, y: 0.74, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &523721800
 PrefabInstance:
@@ -5421,6 +5426,7 @@ MonoBehaviour:
   FileName: 
   FileType: 
   WateredSuccessfully: 0
+  QuestName: Water the flowers
 --- !u!114 &539920060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5567,7 +5573,7 @@ GameObject:
   - component: {fileID: 627480819}
   - component: {fileID: 627480818}
   m_Layer: 0
-  m_Name: coffee grounds
+  m_Name: coffee
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15771,7 +15777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 515329219896315906, guid: 77eace5e68a5dbf498f1acabc125bee1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.271
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 515329219896315906, guid: 77eace5e68a5dbf498f1acabc125bee1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15830,7 +15836,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1706587429035518930, guid: 63d237ba5dc08054085d29d7afc98d04, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1706587429035518930, guid: 63d237ba5dc08054085d29d7afc98d04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16489,7 +16495,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5967509859868636832, guid: 6ee403dd983656048a7d6055b03d409d, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 5967509859868636832, guid: 6ee403dd983656048a7d6055b03d409d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16619,7 +16625,7 @@ PrefabInstance:
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7598698300755121238, guid: e8afbbbb37a2908458ef0805a1c9837d, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7598698300755121238, guid: e8afbbbb37a2908458ef0805a1c9837d, type: 3}
       propertyPath: m_LocalPosition.x

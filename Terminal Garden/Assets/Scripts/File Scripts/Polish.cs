@@ -8,10 +8,14 @@ public class Polish : File
 
     public bool CleanedSuccessfully;
 
+    [SerializeField] string QuestName;
+
     void Start()
     {
         cleaned = false;
         CleanedSuccessfully = false;
+
+        GameManager.Instance.AddQuest(QuestName);
 
         FileName = "polish";
         FileType = ".exe";
@@ -62,6 +66,7 @@ public class Polish : File
                         GameManager.Instance.player.Inventory.Remove(parameterObject);
                         cleaned = true;
                         GameManager.Instance.seekingParameter = null;
+                        GameManager.Instance.RemoveQuest(QuestName);
                         return "SUCCESSFULY POLISHED TARGET. CLOSING PROGRAM";
                     }
                     else

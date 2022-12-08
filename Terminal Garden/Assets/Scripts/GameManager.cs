@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour
 
     // Parameter Stuff
     public File seekingParameter;
-     
+
+    [SerializeField] TMP_Text questListTMP;
+    List<string> questList;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -43,6 +46,8 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(Instance);
+
+        questList = new List<string>();
     }
 
     // Start is called before the first frame update
@@ -259,4 +264,39 @@ public class GameManager : MonoBehaviour
             return "CLOSING PROGRAM";
         }
     }
+
+    public void AddQuest(string quest)
+    {
+        questList.Add(quest);
+
+        if (questList.Count > 0)
+        {
+            questListTMP.text = questList[0];
+
+            for (int i = 1; i < questList.Count; i++)
+                questListTMP.text += "\r\n" + questList[i];
+        }
+        else
+        {
+            questListTMP.text = "";
+        }
+    }
+
+    public void RemoveQuest(string quest)
+    {
+        questList.Remove(quest);
+
+        if (questList.Count > 0)
+        {
+            questListTMP.text = questList[0];
+
+            for (int i = 1; i < questList.Count; i++)
+                questListTMP.text += "\r\n" + questList[i];
+        }
+        else
+        {
+            questListTMP.text = "";
+        }
+    }
+
 }

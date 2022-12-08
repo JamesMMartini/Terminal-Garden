@@ -9,6 +9,7 @@ public class DogmanQuest : File
     [SerializeField] Conversation notAccepted;
     [SerializeField] Sprite happySprite;
     [SerializeField] Sprite scaredSprite;
+    [SerializeField] string QuestName;
 
     GameObject given;
 
@@ -16,6 +17,8 @@ public class DogmanQuest : File
     {
         FileName = "give";
         FileType = ".exe";
+
+        GameManager.Instance.AddQuest(QuestName);
 
         given = null;
     }
@@ -73,6 +76,7 @@ public class DogmanQuest : File
 
                 given = parameterObject;
                 GameManager.Instance.player.Inventory.Remove(parameterObject);
+                GameManager.Instance.RemoveQuest(QuestName);
                 return "OBJECT ACCEPTED";
             }
             else

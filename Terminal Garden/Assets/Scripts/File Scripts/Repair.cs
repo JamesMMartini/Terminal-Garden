@@ -9,6 +9,7 @@ public class Repair : File
 
     [SerializeField] Sprite repairedSprite;
     [SerializeField] Sprite brokenSprite;
+    [SerializeField] string QuestName;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class Repair : File
         {
             GetComponent<SpriteRenderer>().sprite = brokenSprite;
             GetComponent<Collect>().enabled = true;
+            GameManager.Instance.AddQuest(QuestName);
         }
 
         FileName = "repair";
@@ -74,6 +76,7 @@ public class Repair : File
                         GetComponent<SpriteRenderer>().sprite = repairedSprite;
                         repaired = true;
                         GameManager.Instance.seekingParameter = null;
+                        GameManager.Instance.RemoveQuest(QuestName);
                         return "SUCCESSFULY REPAIRED TARGET. CLOSING PROGRAM";
                     }
                     else

@@ -8,6 +8,8 @@ public class Water : File
 
     public bool WateredSuccessfully;
 
+    [SerializeField] string QuestName;
+
     void Start()
     {
         watered = false;
@@ -15,6 +17,8 @@ public class Water : File
 
         FileName = "water";
         FileType = ".exe";
+
+        GameManager.Instance.AddQuest(QuestName);
     }
 
     public override string Open()
@@ -67,6 +71,7 @@ public class Water : File
                         GetComponent<Collect>().enabled = true;
                         watered = true;
                         GameManager.Instance.seekingParameter = null;
+                        GameManager.Instance.RemoveQuest(QuestName);
                         return "SUCCESSFULY WATERED TARGET. CLOSING PROGRAM";
                     }
                     else

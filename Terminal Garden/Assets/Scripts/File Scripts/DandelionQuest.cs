@@ -12,6 +12,7 @@ public class DandelionQuest : File
     [SerializeField] GameObject badResult;
 
     GameObject[] given;
+    [SerializeField] string QuestName;
 
     void Start()
     {
@@ -24,6 +25,8 @@ public class DandelionQuest : File
         {
             FileType = ".exe";
         }
+
+        GameManager.Instance.AddQuest(QuestName);
 
         given = new GameObject[2];
     }
@@ -107,6 +110,8 @@ public class DandelionQuest : File
 
                             badResult.SetActive(true);
                         }
+
+                        GameManager.Instance.RemoveQuest(QuestName);
 
                         return "OBJECT ACCEPTED";
                     }
