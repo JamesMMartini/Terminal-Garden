@@ -61,6 +61,8 @@ public class Polish : File
                         else
                         {
                             CleanedSuccessfully = false;
+
+                            GameManager.Instance.PinkIndex++;
                         }
 
                         GameManager.Instance.player.Inventory.Remove(parameterObject);

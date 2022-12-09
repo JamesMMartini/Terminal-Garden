@@ -72,6 +72,8 @@ public class DogmanQuest : File
                     GameManager.Instance.seekingParameter = null;
 
                     gameObject.GetComponent<Talk>().dialogueLines = failure;
+
+                    GameManager.Instance.PinkIndex++;
                 }
 
                 given = parameterObject;

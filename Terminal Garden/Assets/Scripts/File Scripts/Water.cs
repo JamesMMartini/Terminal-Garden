@@ -64,6 +64,7 @@ public class Water : File
                         else
                         {
                             WateredSuccessfully = false;
+                            GameManager.Instance.PinkIndex++;
                             collect.collectible.GetComponent<Attributes>().AddAttribute("corrupted");
                         }
 

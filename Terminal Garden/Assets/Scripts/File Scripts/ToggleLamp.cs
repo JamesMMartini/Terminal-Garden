@@ -6,12 +6,19 @@ public class ToggleLamp : File
 {
     [SerializeField] bool pinkLamp;
     [SerializeField] Light lampLight;
+    [SerializeField] Color pinkLampColor;
+    [SerializeField] LampManager lampMan;
 
     bool on;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (pinkLamp)
+        {
+            lampLight.color = pinkLampColor;
+        }
+
         if (FileName == "")
             FileName = "togglelamp";
 
@@ -25,12 +32,14 @@ public class ToggleLamp : File
         {
             on = false;
             lampLight.enabled = false;
+            lampMan.LampOff(pinkLamp);
             return "LAMP DISABLED";
         }
         else
         {
             on = true;
             lampLight.enabled = true;
+            lampMan.LampOn(pinkLamp);
             return "LAMP ENABLED";
         }
     }

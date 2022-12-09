@@ -108,6 +108,8 @@ public class DandelionQuest : File
 
                             gameObject.GetComponent<Talk>().dialogueLines = failure;
 
+                            GameManager.Instance.PinkIndex++;
+
                             badResult.SetActive(true);
                         }
 

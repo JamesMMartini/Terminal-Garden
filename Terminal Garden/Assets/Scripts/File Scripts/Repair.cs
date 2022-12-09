@@ -69,6 +69,7 @@ public class Repair : File
                         else
                         {
                             RepairedSuccessfully = false;
+                            GameManager.Instance.PinkIndex++;
                         }
 
                         GameManager.Instance.player.Inventory.Remove(parameterObject);

@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class TryDelete : File
 {
+    public BugManager bugQuest;
+    public bool MrRaccoon;
+    public GameObject deletable;
+
     // Start is called before the first frame update
     void Start()
     {
-        FileName = "TryDelete";
+        FileName = "trydelete";
         FileType = ".exe";
     }
 
     public override string Open()
     {
-        Destroy(gameObject);
-        return gameObject.name + " DELETED";
+        if (!MrRaccoon)
+        {
+            bugQuest.DeleteBug(gameObject);
+            Destroy(deletable);
+            return gameObject.name + " DELETED";
+        }
+        else
+        {
+            bugQuest.DeleteMrRaccoon();
+
+            return "FAILED TO DELETE\r\nBUG OBJECT CORRUPTED";
+        }
     }
 }

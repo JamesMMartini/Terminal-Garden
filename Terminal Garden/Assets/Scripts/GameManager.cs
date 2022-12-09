@@ -32,7 +32,10 @@ public class GameManager : MonoBehaviour
     public File seekingParameter;
 
     [SerializeField] TMP_Text questListTMP;
-    List<string> questList;
+    public List<string> questList;
+
+    [SerializeField] int pinkIndexMax;
+    public int PinkIndex;
 
     private void Awake()
     {
@@ -57,6 +60,8 @@ public class GameManager : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<PlayerController>();
 
         fileList.text = "";
+
+        PinkIndex = 0;
 
         DialogueManager.StartConversation(openingConversation.Lines);
     }
