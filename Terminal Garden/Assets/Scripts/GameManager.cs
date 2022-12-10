@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +38,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] int pinkIndexMax;
     public int PinkIndex;
 
+    public string currentScene;
+
+    public GameObject blackPanel;
+    private float fadeInT = 0f;
+    private bool fadeIn = false;
+    private float fadeOutT = 0f;
+    private bool fadeOut = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -48,7 +57,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        DontDestroyOnLoad(Instance);
+        //DontDestroyOnLoad(Instance);
 
         questList = new List<string>();
     }
@@ -64,6 +73,10 @@ public class GameManager : MonoBehaviour
         PinkIndex = 0;
 
         DialogueManager.StartConversation(openingConversation.Lines);
+
+        currentScene = SceneManager.GetActiveScene().name;
+
+        StartFadeIn();
     }
 
     // Update is called once per frame
@@ -79,6 +92,18 @@ public class GameManager : MonoBehaviour
             RunUpdate = false;
             timeCount += Time.deltaTime;
         }
+
+        if (PinkIndex >= 4 && currentScene == "World One")
+        {
+            StartCoroutine(GoToEndScene("PinkEnd"));
+        }
+        else if (questList.Count == 0 && currentScene == "World One")
+        {
+            StartCoroutine(GoToEndScene("RebornEnd"));
+        }
+
+        FadeIn();
+        FadeOut();
     }
 
     public string ExecuteCommand()
@@ -302,6 +327,72 @@ public class GameManager : MonoBehaviour
         {
             questListTMP.text = "";
         }
+    }
+
+
+    public void StartFadeIn()
+    {
+        if (blackPanel.GetComponent<Image>().color.a == 1)
+        {
+            fadeInT = 0f;
+
+            fadeIn = true;
+        }
+    }
+
+
+
+    public void StartFadeOut()
+    {
+        if (blackPanel.GetComponent<Image>().color.a == 0)
+        {
+            fadeOutT = 0f;
+
+            fadeOut = true;
+        }
+    }
+
+    public void FadeIn()
+    {
+        if (fadeIn)
+        {
+            if (fadeInT < 1f)
+            {
+                fadeInT += 0.2f * Time.deltaTime;
+                blackPanel.GetComponent<Image>().color = Color.Lerp(new Color(blackPanel.GetComponent<Image>().color.r, blackPanel.GetComponent<Image>().color.g, blackPanel.GetComponent<Image>().color.b, 1f), new Color(blackPanel.GetComponent<Image>().color.r, blackPanel.GetComponent<Image>().color.g, blackPanel.GetComponent<Image>().color.b, 0f), fadeInT);
+
+            }
+            else
+            {
+                fadeIn = false;
+            }
+        }
+    }
+
+    public void FadeOut()
+    {
+        if (fadeOut)
+        {
+            if (fadeOutT < 1f)
+            {
+                fadeOutT += 0.2f * Time.deltaTime;
+                blackPanel.GetComponent<Image>().color = Color.Lerp(new Color(blackPanel.GetComponent<Image>().color.r, blackPanel.GetComponent<Image>().color.g, blackPanel.GetComponent<Image>().color.b, 0f), new Color(blackPanel.GetComponent<Image>().color.r, blackPanel.GetComponent<Image>().color.g, blackPanel.GetComponent<Image>().color.b, 1f), fadeOutT);
+
+            }
+            else
+            {
+                fadeOut = false;
+
+            }
+        }
+    }
+
+    IEnumerator GoToEndScene(string sceneName)
+    {
+        StartFadeOut();
+        yield return new WaitForSeconds(8f);
+        SceneManager.LoadScene(sceneName);
+        
     }
 
 }

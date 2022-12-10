@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] TMP_Text characterName;
 
+    public GameObject endPanel;
+
     public void StartConversation(string[] newLines)
     {
         gameObject.SetActive(true);

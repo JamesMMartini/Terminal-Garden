@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SpriteController : MonoBehaviour
 {
-    PlayerController player;
+    public PlayerController player;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameManager.Instance.player;
+        //player = GameManager.Instance.player;
     }
 
     // Update is called once per frame
