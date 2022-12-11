@@ -40,6 +40,9 @@ public class ToggleLamp : File
             on = true;
             lampLight.enabled = true;
             lampMan.LampOn(pinkLamp);
+
+            gameObject.GetComponent<ToggleLamp>().enabled = false;
+
             return "LAMP ENABLED";
         }
     }

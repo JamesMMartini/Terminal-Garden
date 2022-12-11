@@ -35,9 +35,14 @@ public class DandelionQuest : File
     {
         if (given[1] == null)
         {
-            GameManager.Instance.seekingParameter = this;
+            GameManager.Instance.SetSeekingParameter(this);
 
-            return "PLEASE PASS OBJECT TO GIVE (2 REMAINING)";
+            //GameManager.Instance.seekingParameter = this;
+
+            if (given[0] == null)
+                return "PLEASE PASS OBJECT TO GIVE (2 REMAINING)";
+            else
+                return "PLEASE PASS OBJECT TO GIVE (1 REMAINING)";
         }
         else
         {

@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: Happy
   m_EditorClassIdentifier: 
-  lines: Dogman:I'm happy, this flower is just what I needed!
+  lines:
+  - Dogman:...A flower? For me?
+  - "Dogman:...Conan\u2026Thank\u2026thank you"
+  - "Dogman:...This is\u2026I don\u2019t know\u2026Amazing"
+  - 'Dogman: Thank you so much conan. I feel a lot better now. '

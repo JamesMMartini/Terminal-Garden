@@ -106,6 +106,8 @@ public class BugManager : MonoBehaviour
         mrRaccoon.GetComponent<DebugRaccoon>().enabled = false;
 
         GameManager.Instance.RemoveQuest(QuestName);
+
+        GameManager.Instance.AddQuest(newQuestName);
     }
 
     public void DebugMrRaccoon()

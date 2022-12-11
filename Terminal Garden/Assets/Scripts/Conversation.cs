@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Conversation", menuName = "Dialog/Create New Conversation")]
 public class Conversation : ScriptableObject
 {
-    [Multiline(20)] [SerializeField] string lines;
+    [SerializeField] string[] lines;
 
-    public string[] Lines { get { return lines.Split(System.Environment.NewLine); } set { Lines = value; } }
+    public string[] Lines { get { return lines; } set { lines = value; } }
 }

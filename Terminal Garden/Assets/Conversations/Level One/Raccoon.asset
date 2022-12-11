@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: Raccoon
   m_EditorClassIdentifier: 
-  lines: "Mr. Raccoon:It\u2019s a lot different than last time you woke right. How
-    long is it?\r\nConan:It\u2019s..... 127 years ago.\r\nMr. Raccoon:Yeah...A lot
-    things happened. The stone. The church. All the revolution things.\r\nConan:......\r\nMr.
-    Raccoon:But...There\u2019s something wrong. People become....different. \r\nMr.
-    Raccoon:(chuckle) And I have no proof. No one will believe me.\r\nConan:....I...believe
-    you sir\r\nMr. Raccoon:Sorry I said all the things to you. I guess I just need
-    someone to talk\r\nMr. Raccoon:Go do the mission Conan. I shall not waste your
-    time.\r"
+  lines:
+  - "Mr. Raccoon:It\u2019s a lot different than last time you woke up right. How
+    long is it? "
+  - "Conan: It\u2019s..... 127 years ago."
+  - Mr. Raccoon:Yeah...A lot of things happened. The sickness. The war. All the revolutionary
+    things. At least we have the stone.
+  - 'Conan: ......'
+  - "Mr. Raccoon:But...There\u2019s something wrong. People become....different.."
+  - Mr. Raccoon:(chuckle) And I have no proof. No one will believe me.
+  - "Conan:..I...believe you\u2026.sir. "
+  - Mr. Raccoon:Sorry I said all the things to you. I guess I just need someone to
+    talk
+  - Mr. Raccoon:Go do the mission Conan. I shall not waste your time.

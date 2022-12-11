@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1425507698226496195}
   - component: {fileID: 1425507698226496194}
   - component: {fileID: 1159089498003200504}
+  - component: {fileID: -7149918552567194618}
   m_Layer: 0
   m_Name: Dandelion
   m_TagString: Interactable
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221c578de9ef48143becd60dc5add3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &1425507698226496195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +150,18 @@ MonoBehaviour:
   goodResult: {fileID: 0}
   badResult: {fileID: 0}
   QuestName: Help Dandelion
+--- !u!114 &-7149918552567194618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425507698226496199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e553d2cfdea7347a9c16abed453029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FileName: helpdrink
+  FileType: .exe
+  dialogueLines: {fileID: 11400000, guid: 72b16c65f7102444eb2c80b8b15ad706, type: 2}

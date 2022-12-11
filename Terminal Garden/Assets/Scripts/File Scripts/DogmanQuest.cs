@@ -27,7 +27,9 @@ public class DogmanQuest : File
     {
         if (given == null)
         {
-            GameManager.Instance.seekingParameter = this;
+            GameManager.Instance.SetSeekingParameter(this);
+            
+            //GameManager.Instance.seekingParameter = this;
 
             return "PLEASE PASS OBJECT TO GIVE";
         }

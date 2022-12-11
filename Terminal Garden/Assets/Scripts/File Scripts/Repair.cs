@@ -26,9 +26,18 @@ public class Repair : File
 
     public override string Open()
     {
-        GameManager.Instance.seekingParameter = this;
+        if (!repaired)
+        {
+            GameManager.Instance.SetSeekingParameter(this);
 
-        return "PLEASE PASS MATERIALS";
+            //GameManager.Instance.seekingParameter = this;
+
+            return "PLEASE PASS MATERIALS";
+        }
+        else
+        {
+            return "OBJECT ALREADY REPAIRED";
+        }
     }
 
     public override string Execute(string parameter)

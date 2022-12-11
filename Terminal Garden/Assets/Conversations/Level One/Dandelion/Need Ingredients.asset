@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: Need Ingredients
   m_EditorClassIdentifier: 
-  lines: 'Dandelion:Hey, I need ideas for a drink to make for everyone tonight.
-
-    Dandelion:I
-    have some ingredients over on the side of the bar. Grab what you think would
-    be good. I need two of them.
-
-    Dandelion:Or if you have other ingredients
-    you think would be good bring those too.'
+  lines:
+  - Dandelion:Hey, I need ideas for a drink to make for everyone tonight.
+  - Dandelion:I have some ingredients over on the side of the bar. Grab what you
+    think would be good. I need two of them.
+  - Dandelion:Or if you have other ingredients you think would be good bring those
+    too.

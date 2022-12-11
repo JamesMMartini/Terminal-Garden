@@ -194,20 +194,20 @@ public class GameManager : MonoBehaviour
 
             GameObject[] allInteractable = GameObject.FindGameObjectsWithTag("Interactable");
 
-            List<GameObject> objectList = new List<GameObject>();
+            List<string> objectList = new List<string>();
 
             foreach (GameObject interactable in allInteractable)
             {
                 Vector3 distToObj = interactable.transform.position - player.transform.position;
 
-                if (distToObj.magnitude < 30f)
-                    objectList.Add(interactable);
+                if (distToObj.magnitude < 30f && !objectList.Contains(interactable.name))
+                    objectList.Add(interactable.name);
             }
 
             fileList.text = "INTERACTABLE OBJECTS WITHIN 40M:" + "\r\n";
-            foreach (GameObject interactable in objectList)
+            foreach (string interactable in objectList)
             {
-                fileList.text += "\r\n" + interactable.name;
+                fileList.text += "\r\n" + interactable;
             }
         }
         else if (terminalInput == "ls")
@@ -231,13 +231,13 @@ public class GameManager : MonoBehaviour
                 returnString += "\r\nPLEASE SELECT AN OBJECT TO VIEW ITS FILES";
             }
         }
-        else if (terminalInput.StartsWith("./"))
+        else
         {
             if (terminal.selectedObject != null)
             {
                 try
                 {
-                    string file = terminalInput.Substring(terminalInput.IndexOf("/") + 1);
+                    string file = terminalInput;
                     string filename = file.Substring(0, file.IndexOf("."));
                     File objFile = null;
 
@@ -265,12 +265,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                returnString += "\r\nPLEASE SELECT AN OBJECT TO OPEN ITS FILES";
+                returnString += "UNKNOWN COMMAND";
             }
-        }
-        else
-        {
-            returnString += "UNKNOWN COMMAND";
         }
 
         terminalInput = "";
@@ -327,6 +323,13 @@ public class GameManager : MonoBehaviour
         {
             questListTMP.text = "";
         }
+    }
+
+    public void SetSeekingParameter(File file)
+    {
+        seekingParameter = file;
+
+        terminal.ShowInventory();
     }
 
 

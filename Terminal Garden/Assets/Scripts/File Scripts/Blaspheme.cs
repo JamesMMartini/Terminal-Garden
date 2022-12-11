@@ -12,7 +12,9 @@ public class Blaspheme : File
 
     public override string Open()
     {
-        GameManager.Instance.seekingParameter = this;
+        GameManager.Instance.SetSeekingParameter(this);
+
+        //GameManager.Instance.seekingParameter = this;
 
         return "PLEASE PASS OBJECT TO BLASPHEME WITH";
     }

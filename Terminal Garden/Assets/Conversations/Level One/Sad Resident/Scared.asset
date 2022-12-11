@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: Scared
   m_EditorClassIdentifier: 
-  lines: Dogman:I'm scared! Who allowed these horrors to exist here?
+  lines:
+  - "Dogman:...A flower? For\u2026AHHHHHHH"
+  - "Dogman: what\u2026what is it\u2026"
+  - "Dogman: why..there\u2019s\u2026face"
+  - "Dogman:...No\u2026Oh..no. Pink\u2026please save me"

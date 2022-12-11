@@ -23,9 +23,18 @@ public class Water : File
 
     public override string Open()
     {
-        GameManager.Instance.seekingParameter = this;
+        if (!watered)
+        {
+            GameManager.Instance.SetSeekingParameter(this);
 
-        return "PLEASE PASS WATER OBJECT";
+            //GameManager.Instance.seekingParameter = this;
+
+            return "PLEASE PASS WATER OBJECT";
+        }
+        else
+        {
+            return "OBJECT ALREADY WATERED";
+        }
     }
 
     public override string Execute(string parameter)

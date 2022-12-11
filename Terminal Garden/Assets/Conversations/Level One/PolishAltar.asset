@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: PolishAltar
   m_EditorClassIdentifier: 
-  lines: 'Mr. Raccoon:Could you polish the altar? It''s been looking a little dirty
-    lately. I have some cleanser if you need it.
-
-    Mr. Raccoon:Thanks =P'
+  lines:
+  - Mr. Raccoon:Clean the church? Yeah I have something for you
+  - 'Mr. Raccoon:I think I have a cleanser from the gardener. '
+  - 'Mr. Raccoon:Huh the church used to be full of people '
+  - "Mr. Raccoon:And now no one is going to. Because we don\u2019t need to anymore.
+    Only the gardener cleans it regularly. "
+  - "Mr. Raccoon:It was supposed to be his work but after he got sick and\u2026uhh
+    lots things happened."
+  - Mr. Raccoon:Anyway, just take the cleanser from me when you're ready.

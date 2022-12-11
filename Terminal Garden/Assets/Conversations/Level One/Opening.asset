@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: Opening
   m_EditorClassIdentifier: 
-  lines: "Mr. Racoon:Access Code: 1382. Activate Intelligent Special Dilemma Helper.\r\nConan:Code
-    Correct. Program activating.\r\nConan:......All system activated\r\nConan:Good
-    morning. Mr. Racoon.\r\nMr. Racoon:It has been a long time Conan. We need your
-    help again.\r\nConan:It\u2019s my duty. What\u2019s my mission.\r\nMr. Racoon:The
-    flower patch needs watering. Also, you should ask around. I think some other
-    people may need help as well.\r\nConan:Understand. Start Mission."
+  lines:
+  - 'Mr. Raccoon:Access Code - 1382. Activate Intelligent Special Dilemma Helper. '
+  - "Conan:Code Correct\u2026.Program activating."
+  - Conan:......All system activated
+  - "Conan: Good morning\u2026\u2026Mr. Racoon."
+  - Mr. Raccoon:It has been a long time Conan. We need your help again.
+  - "Conan:\u2026Mission Assigning"
+  - Mr. Raccoon:Go to the garden and help water the flowers. The gardener suddenly
+    got sick days ago.
+  - Mr. Raccoon:Also, walk around the village. I believe other people need help also.
+  - "Conan: Mission assigned\u2026Understand."

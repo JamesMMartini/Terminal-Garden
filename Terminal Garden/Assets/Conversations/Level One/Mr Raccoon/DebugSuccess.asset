@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: DebugSuccess
   m_EditorClassIdentifier: 
-  lines: Mr. Raccoon:Thanks for debugging me, friend. Take this and save me.
+  lines:
+  - "Mr. Raccoon:....what? Conan? What you\u2026"
+  - "Mr. Raccoon:Oh\u2026.Jeez\u2026.what happened\u2026What have I done\u2026The
+    pink\u2026"
+  - "Mr. Raccoon:Conan. Oh gosh you saved me. I didn\u2019t\u2026"
+  - "Mr. Raccoon:No\u2026 No time for small chat now. I don\u2019t think I can be
+    awakened for a long time"
+  - "Mr. Raccoon:This\u2026This might be the only thing that can help us. Take it!
+    And use it on \u2026."
+  - "Mr. Raccoon:\u2026."
+  - "Conan: \u2026.Sir?"
+  - "Mr. Raccoon:\u2026Hey conan. Why are you here? Need any help from me?"
+  - "Conan: \u2026. "

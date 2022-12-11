@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     public void AdvanceDialogue()
     {
         activeLine++;
+        SoundManager.Instance.PlayClip(SoundManager.AudioClips.dialogueAdvance);
 
         if (activeLine < lines.Length)
         {

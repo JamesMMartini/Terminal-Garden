@@ -15,6 +15,7 @@ public class TerminalManager : MonoBehaviour
     [SerializeField] TMP_Text folderName;
     [SerializeField] TMP_Text fileList;
     [SerializeField] GameObject selectedIndicator;
+    [SerializeField] GameObject questWindow;
 
     public GameObject selectedObject;
 
@@ -28,7 +29,7 @@ public class TerminalManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.RunUpdate)
+        if (GameManager.Instance.RunUpdate && !GameManager.Instance.DialogueManager.isActiveAndEnabled)
         {
             // Determine if we need to blink the cursor
             if (inputField.text.EndsWith("_"))
@@ -70,6 +71,7 @@ public class TerminalManager : MonoBehaviour
         if (!char.IsControl(ch) && !GameManager.Instance.DialogueManager.gameObject.activeInHierarchy)
         {
             GameManager.Instance.terminalInput += ch;
+            SoundManager.Instance.PlayClip(SoundManager.AudioClips.typeClick);
             inputField.text = GameManager.Instance.terminalInput + "_";
         }
 
@@ -100,6 +102,19 @@ public class TerminalManager : MonoBehaviour
         }
     }
 
+    public void Tab(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            SoundManager.Instance.PlayClip(SoundManager.AudioClips.questToggle);
+
+            if (questWindow.activeInHierarchy)
+                questWindow.SetActive(false);
+            else
+                questWindow.SetActive(true);
+        }
+    }
+
     public void Click(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -112,6 +127,8 @@ public class TerminalManager : MonoBehaviour
                 Transform objectHit = hit.transform;
                 if (objectHit.tag == "Interactable")
                 {
+                    SoundManager.Instance.PlayClip(SoundManager.AudioClips.mouseClick);
+
                     SelectObject(objectHit.gameObject, true);
 
                     File[] files = selectedObject.GetComponents<File>();

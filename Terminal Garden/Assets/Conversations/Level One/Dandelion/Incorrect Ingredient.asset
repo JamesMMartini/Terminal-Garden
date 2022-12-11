@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: Incorrect Ingredient
   m_EditorClassIdentifier: 
-  lines: Dandelion:Come on, I can't use this. Come back when you have real ingredients.
+  lines:
+  - Dandelion:Come on, I can't use this. Come back when you have real ingredients.

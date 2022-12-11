@@ -23,9 +23,18 @@ public class Polish : File
 
     public override string Open()
     {
-        GameManager.Instance.seekingParameter = this;
+        if (!cleaned)
+        {
+            GameManager.Instance.SetSeekingParameter(this);
 
-        return "PLEASE PASS CLEANING OBJECT";
+            //GameManager.Instance.seekingParameter = this;
+
+            return "PLEASE PASS CLEANING OBJECT";
+        }
+        else
+        {
+            return "OBJECT ALREADY CLEANED";
+        }
     }
 
     public override string Execute(string parameter)

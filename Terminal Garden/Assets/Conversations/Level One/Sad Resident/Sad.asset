@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: Sad
   m_EditorClassIdentifier: 
-  lines: 'Dogman:I''m sad!
-
-    Dogman:There''s no beauty in my life =('
+  lines:
+  - "Dogman:No\u2026No"
+  - "Dogman:Why everything goes wrong\u2026what I did wrong\u2026"
+  - "Dogman:Pink god\u2026.please help me\u2026."
+  - "Conan:\u2026"
+  - "Dogman:\u2026.Oh\u2026Hey Conan."
+  - "Dogman:Can you give me something\u2026..anything will help"
+  - "Dogman:\u2026No..forget about it. You should focus on your work"
+  - Dogman:Bye Conan.

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: Failure
   m_EditorClassIdentifier: 
-  lines: Dandelion:Oh! This is perfect! Everyone's going to crazy for this!
+  lines:
+  - Dandelion:Oh! This is perfect! Everyone's going to crazy for this!
