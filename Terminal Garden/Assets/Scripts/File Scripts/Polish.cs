@@ -74,7 +74,8 @@ public class Polish : File
                             GameManager.Instance.PinkIndex++;
                         }
 
-                        GameManager.Instance.player.Inventory.Remove(parameterObject);
+                        GameManager.Instance.player.RemoveObject(parameterObject);
+                        //GameManager.Instance.player.Inventory.Remove(parameterObject);
                         cleaned = true;
                         GameManager.Instance.seekingParameter = null;
                         GameManager.Instance.RemoveQuest(QuestName);

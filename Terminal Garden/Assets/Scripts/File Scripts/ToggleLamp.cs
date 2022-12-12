@@ -8,6 +8,7 @@ public class ToggleLamp : File
     [SerializeField] Light lampLight;
     [SerializeField] Color pinkLampColor;
     [SerializeField] LampManager lampMan;
+    [SerializeField] Sprite pinkSprite;
 
     bool on;
 
@@ -17,6 +18,7 @@ public class ToggleLamp : File
         if (pinkLamp)
         {
             lampLight.color = pinkLampColor;
+            gameObject.GetComponent<SpriteRenderer>().sprite = pinkSprite;
         }
 
         if (FileName == "")

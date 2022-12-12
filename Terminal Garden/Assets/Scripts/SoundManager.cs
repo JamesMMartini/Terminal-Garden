@@ -19,6 +19,8 @@ public class SoundManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        DontDestroyOnLoad(this);
     }
 
     public void PlayClip(AudioClips clip)
@@ -31,6 +33,9 @@ public class SoundManager : MonoBehaviour
         typeClick = 0,
         dialogueAdvance = 1,
         mouseClick = 2,
-        questToggle = 3
+        questToggle = 3,
+        inventoryAdded = 4,
+        inventoryRemoved = 5,
+        questComplete = 6
     }
 }

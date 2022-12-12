@@ -69,6 +69,13 @@ public class PlayerController : MonoBehaviour
     public void CollectObject(GameObject gameObj)
     {
         gameObj.SetActive(false);
+        SoundManager.Instance.PlayClip(SoundManager.AudioClips.inventoryAdded);
         Inventory.Add(gameObj);
+    }
+
+    public void RemoveObject(GameObject gameObj)
+    {
+        SoundManager.Instance.PlayClip(SoundManager.AudioClips.inventoryRemoved);
+        Inventory.Remove(gameObj);
     }
 }

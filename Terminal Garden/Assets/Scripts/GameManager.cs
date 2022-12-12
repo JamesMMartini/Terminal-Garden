@@ -311,6 +311,7 @@ public class GameManager : MonoBehaviour
     public void RemoveQuest(string quest)
     {
         questList.Remove(quest);
+        SoundManager.Instance.PlayClip(SoundManager.AudioClips.questComplete);
 
         if (questList.Count > 0)
         {

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Blaspheme : File
 {
+    [SerializeField] Sprite bloodyStone;
+    [SerializeField] string QuestName;
+
     void Start()
     {
         FileName = "blaspheme";
@@ -43,9 +46,12 @@ public class Blaspheme : File
 
                 if (hasBlood)
                 {
-                    GameManager.Instance.player.Inventory.Remove(parameterObject);
+                    GameManager.Instance.player.RemoveObject(parameterObject);
+                    //GameManager.Instance.player.Inventory.Remove(parameterObject);
                     GameManager.Instance.seekingParameter = null;
+                    GameManager.Instance.RemoveQuest(QuestName);
 
+                    gameObject.GetComponent<SpriteRenderer>().sprite = bloodyStone;
                     gameObject.GetComponent<Pray>().enabled = false;
                     gameObject.GetComponent<Blaspheme>().enabled = false;
                     return "SUCCESSFULY BLASPHEMED TARGET. CLOSING PROGRAM";

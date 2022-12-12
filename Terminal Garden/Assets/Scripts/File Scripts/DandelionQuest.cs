@@ -73,7 +73,8 @@ public class DandelionQuest : File
 
                 if (ingredient)
                 {
-                    GameManager.Instance.player.Inventory.Remove(parameterObject);
+                    GameManager.Instance.player.RemoveObject(parameterObject);
+                    //GameManager.Instance.player.Inventory.Remove(parameterObject);
 
                     if (given[0] == null)
                     {

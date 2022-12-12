@@ -81,7 +81,8 @@ public class Repair : File
                             GameManager.Instance.PinkIndex++;
                         }
 
-                        GameManager.Instance.player.Inventory.Remove(parameterObject);
+                        GameManager.Instance.player.RemoveObject(parameterObject);
+                        //GameManager.Instance.player.Inventory.Remove(parameterObject);
                         GetComponent<Collect>().enabled = false;
                         GetComponent<SpriteRenderer>().sprite = repairedSprite;
                         repaired = true;

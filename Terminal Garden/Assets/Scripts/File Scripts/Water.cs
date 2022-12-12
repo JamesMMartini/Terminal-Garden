@@ -77,7 +77,8 @@ public class Water : File
                             collect.collectible.GetComponent<Attributes>().AddAttribute("corrupted");
                         }
 
-                        GameManager.Instance.player.Inventory.Remove(parameterObject);
+                        GameManager.Instance.player.RemoveObject(parameterObject);
+                        //GameManager.Instance.player.Inventory.Remove(parameterObject);
                         GetComponent<Collect>().enabled = true;
                         watered = true;
                         GameManager.Instance.seekingParameter = null;

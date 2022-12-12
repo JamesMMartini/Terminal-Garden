@@ -19,12 +19,14 @@ public class BugManager : MonoBehaviour
 
     int activeQuests;
     bool started;
+    bool ended;
 
     // Start is called before the first frame update
     void Start()
     {
         activeQuests = brokenObjects.Length + 1;
         started = false;
+        ended = false;
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class BugManager : MonoBehaviour
         {
             BeginQuest();
         }
-        else if (activeQuests <= 0 && started)
+        else if (activeQuests <= 0 && started && !ended)
         {
             EndQuest();
         }
@@ -82,6 +84,10 @@ public class BugManager : MonoBehaviour
 
     void EndQuest()
     {
+        ended = true;
+
+        bugs.SetActive(false);
+
         GameManager.Instance.RemoveQuest(QuestName);
 
         idol.GetComponent<Blaspheme>().enabled = true;
@@ -105,9 +111,9 @@ public class BugManager : MonoBehaviour
         mrRaccoon.GetComponent<TryDelete>().enabled = false;
         mrRaccoon.GetComponent<DebugRaccoon>().enabled = false;
 
-        GameManager.Instance.RemoveQuest(QuestName);
+        //GameManager.Instance.RemoveQuest(QuestName);
 
-        GameManager.Instance.AddQuest(newQuestName);
+        //GameManager.Instance.AddQuest(newQuestName);
     }
 
     public void DebugMrRaccoon()

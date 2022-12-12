@@ -79,7 +79,8 @@ public class DogmanQuest : File
                 }
 
                 given = parameterObject;
-                GameManager.Instance.player.Inventory.Remove(parameterObject);
+                GameManager.Instance.player.RemoveObject(parameterObject);
+                //GameManager.Instance.player.Inventory.Remove(parameterObject);
                 GameManager.Instance.RemoveQuest(QuestName);
                 return "OBJECT ACCEPTED";
             }
