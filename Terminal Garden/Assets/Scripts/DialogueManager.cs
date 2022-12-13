@@ -12,6 +12,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TMP_Text characterName;
 
     public GameObject endPanel;
+    public bool isPinkEnd;
+    public bool isRebornEnd;
+
+    public GameManager gameManager;
 
     public void StartConversation(string[] newLines)
     {
@@ -49,6 +53,14 @@ public class DialogueManager : MonoBehaviour
     {
         lines = null;
         activeLine = 0;
+
+        if (isPinkEnd || isRebornEnd)
+        {
+            endPanel.SetActive(true);
+            SoundManager.Instance.PlayClip(SoundManager.AudioClips.endSound);
+
+        }
+
         gameObject.SetActive(false);
     }
 }

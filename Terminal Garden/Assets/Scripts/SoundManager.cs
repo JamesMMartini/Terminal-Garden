@@ -36,6 +36,7 @@ public class SoundManager : MonoBehaviour
         questToggle = 3,
         inventoryAdded = 4,
         inventoryRemoved = 5,
-        questComplete = 6
+        questComplete = 6,
+        endSound = 7
     }
 }

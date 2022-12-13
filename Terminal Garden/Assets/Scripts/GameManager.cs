@@ -74,6 +74,15 @@ public class GameManager : MonoBehaviour
 
         DialogueManager.StartConversation(openingConversation.Lines);
 
+        if (openingConversation.name == "PinkEnd")
+        {
+            DialogueManager.isPinkEnd = true;
+        }
+        else if (openingConversation.name == "RebornEnd")
+        {
+            DialogueManager.isRebornEnd = true;
+        }
+
         currentScene = SceneManager.GetActiveScene().name;
 
         StartFadeIn();

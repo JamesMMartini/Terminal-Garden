@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: PinkEnd
   m_EditorClassIdentifier: 
-  lines: 'dskbskdlvbfdv. sfgsdgdgsd. '
+  lines:
+  - "Mr. Raccoon: \u2026.Oh"
+  - 'Mr. Raccoon: My God. My lord.'
+  - 'Mr. Raccoon: I pray for you with my honest heart.'
+  - 'Mr. Raccoon: Yes. The world shall be pink.'
+  - 'Mr. Raccoon: Yes. We shall let the world know you'
+  - 'Mr. Raccoon: Oh my lord. Praise the stone!'

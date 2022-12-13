@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a7c4efe326a4e41af91c51424c1020, type: 3}
   m_Name: RebornEnd
   m_EditorClassIdentifier: 
-  lines: 'sfgdsgdkgj. sfgfdsfdsh. '
+  lines:
+  - 'Mr. Raccoon: ....'
+  - 'Mr. Raccoon: Conan. You did it! You destroy that thing'
+  - "Mr. Raccoon: Uh I was so stupid. I only see the power that stone can provide
+    but\u2026"
+  - "Mr. Raccoon: I didn\u2019t even know when I was controlled by it."
+  - 'Mr. Raccoon: But thank god you are here.'
+  - 'Mr. Raccoon: I truly truly appreciate you. Not just for me. But for everyone
+    here.'
+  - "Mr. Raccoon: Now it\u2019s a day worth celebrating!"
+  - 'Mr. Raccoon: For us! And for you Conan!'
