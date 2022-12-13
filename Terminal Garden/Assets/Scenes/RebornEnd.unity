@@ -5854,6 +5854,7 @@ MonoBehaviour:
   FileName: 
   FileType: 
   WateredSuccessfully: 0
+  corruptedFlowerSprites: []
   QuestName: Water the flowers
 --- !u!114 &539920060
 MonoBehaviour:
@@ -6844,7 +6845,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2dd87a6ee13538f43b3e52182635360e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b88a03dd9d92346bcb19843d6421021d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
@@ -9315,7 +9316,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6f80f0dc16eabb24c9f0d93d48c059a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe056b909c84ffc4d973a2c08d04055f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
