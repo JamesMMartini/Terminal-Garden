@@ -10,6 +10,7 @@ public class BugManager : MonoBehaviour
     [SerializeField] Conversation success;
     [SerializeField] GameObject blood;
     [SerializeField] GameObject bugObject;
+    [SerializeField] RuntimeAnimatorController eyesAnimation;
     [SerializeField] GameObject bugs;
     [SerializeField] Material redMat;
     [SerializeField] Material defaultMat;
@@ -110,6 +111,8 @@ public class BugManager : MonoBehaviour
 
         mrRaccoon.GetComponent<TryDelete>().enabled = false;
         mrRaccoon.GetComponent<DebugRaccoon>().enabled = false;
+
+        bugs.GetComponent<Animator>().runtimeAnimatorController = eyesAnimation;
 
         //GameManager.Instance.RemoveQuest(QuestName);
 
