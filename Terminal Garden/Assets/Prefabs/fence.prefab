@@ -78,7 +78,7 @@ Transform:
   m_GameObject: {fileID: 6873298968231734620}
   m_LocalRotation: {x: 0, y: 0.6944073, z: 0, w: 0.71958226}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1.52}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1871471035241493908}
@@ -126,7 +126,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f1a33fff2f9a1e04e96d143f041bc698, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,7 +148,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000002, y: 2.94, z: 0.20000005}
+  m_Size: {x: 5.99, y: 3.38, z: 0.20000005}
   m_Center: {x: 0, y: 0.93, z: 0}
 --- !u!114 &7647080823538269370
 MonoBehaviour:
@@ -182,6 +182,6 @@ MonoBehaviour:
   FileType: 
   repaired: 1
   RepairedSuccessfully: 1
-  repairedSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  brokenSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  repairedSprite: {fileID: 21300000, guid: f1a33fff2f9a1e04e96d143f041bc698, type: 3}
+  brokenSprite: {fileID: 21300000, guid: 49cdd6ee7f282d14e8d2fd2c5b754ed5, type: 3}
   QuestName: Fix the fence

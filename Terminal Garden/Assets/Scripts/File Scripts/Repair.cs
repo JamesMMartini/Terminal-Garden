@@ -74,17 +74,18 @@ public class Repair : File
                         if (!broken)
                         {
                             RepairedSuccessfully = true;
+                            GetComponent<SpriteRenderer>().sprite = repairedSprite;
                         }
                         else
                         {
                             RepairedSuccessfully = false;
+                            GetComponent<SpriteRenderer>().sprite = repairedSprite;
                             GameManager.Instance.PinkIndex++;
                         }
 
                         GameManager.Instance.player.RemoveObject(parameterObject);
                         //GameManager.Instance.player.Inventory.Remove(parameterObject);
                         GetComponent<Collect>().enabled = false;
-                        GetComponent<SpriteRenderer>().sprite = repairedSprite;
                         repaired = true;
                         GameManager.Instance.seekingParameter = null;
                         GameManager.Instance.RemoveQuest(QuestName);

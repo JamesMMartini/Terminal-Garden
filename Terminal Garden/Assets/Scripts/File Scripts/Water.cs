@@ -8,6 +8,8 @@ public class Water : File
 
     public bool WateredSuccessfully;
 
+    [SerializeField] Sprite[] corruptedFlowerSprites;
+
     [SerializeField] string QuestName;
 
     void Start()
@@ -76,6 +78,13 @@ public class Water : File
                             GameManager.Instance.PinkIndex++;
                             collect.collectible.name = "corrupted flower";
                             collect.collectible.GetComponent<Attributes>().AddAttribute("corrupted");
+
+                            // Change the flower sprites to corrupted
+                            SpriteRenderer[] flowers = gameObject.GetComponentsInChildren<SpriteRenderer>();
+                            for (int i = 0; i < flowers.Length; i++)
+                            {
+                                flowers[i].sprite = corruptedFlowerSprites[i % corruptedFlowerSprites.Length];
+                            }
                         }
 
                         GameManager.Instance.player.RemoveObject(parameterObject);
