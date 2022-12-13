@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0007991221, g: 0.0041676136, b: 0.020062326, a: 1}
+  m_IndirectSpecularColor: {r: 0.0008020329, g: 0.004175146, b: 0.020073427, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10180,6 +10180,7 @@ MonoBehaviour:
   - drink
   - liquid
   - corrupted
+  - alcohol
 --- !u!65 &1174200165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17889,10 +17890,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1083349671304835216, guid: 756d91a4f1f597649a48b9137abd50c4, type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3247338745265221411, guid: 756d91a4f1f597649a48b9137abd50c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

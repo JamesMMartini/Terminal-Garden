@@ -6,6 +6,7 @@ public class DogmanQuest : File
 {
     [SerializeField] Conversation success;
     [SerializeField] Conversation failure;
+    [SerializeField] Conversation beer;
     [SerializeField] Conversation notAccepted;
     [SerializeField] Sprite happySprite;
     [SerializeField] Sprite scaredSprite;
@@ -51,14 +52,19 @@ public class DogmanQuest : File
 
         if (parameterObject != null)
         {
-            if (parameterObject.name == "flower")
+            Attributes atts = parameterObject.GetComponent<Attributes>();
+            bool healthy = false;
+            bool alcohol = false;
+            foreach (string att in atts.GetAttributes())
             {
-                Attributes atts = parameterObject.GetComponent<Attributes>();
-                bool healthy = false;
-                foreach (string att in atts.GetAttributes())
-                    if (att == "healthy")
-                        healthy = true;
+                if (att == "healthy")
+                    healthy = true;
+                else if (att == "alcohol")
+                    alcohol = true;
+            }
 
+            if (parameterObject.name.Contains("flower"))
+            {
                 if (healthy)
                 {
                     GameManager.Instance.DialogueManager.StartConversation(success.Lines);
@@ -77,6 +83,20 @@ public class DogmanQuest : File
 
                     GameManager.Instance.PinkIndex++;
                 }
+
+                given = parameterObject;
+                GameManager.Instance.player.RemoveObject(parameterObject);
+                //GameManager.Instance.player.Inventory.Remove(parameterObject);
+                GameManager.Instance.RemoveQuest(QuestName);
+                return "OBJECT ACCEPTED";
+            }
+            else if (parameterObject.name == "drink" && alcohol)
+            {
+                GameManager.Instance.DialogueManager.StartConversation(beer.Lines);
+                GetComponent<SpriteRenderer>().sprite = happySprite;
+                GameManager.Instance.seekingParameter = null;
+
+                gameObject.GetComponent<Talk>().dialogueLines = beer;
 
                 given = parameterObject;
                 GameManager.Instance.player.RemoveObject(parameterObject);

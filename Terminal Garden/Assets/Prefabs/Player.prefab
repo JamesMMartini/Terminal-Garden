@@ -141,9 +141,10 @@ MonoBehaviour:
   rotation: 0
   _verticalVelocity: 0
   character: {fileID: 355308148705736844}
-  speed: 2
+  speed: 4
   gravity: -10
   _terminalVelocity: -30
+  Inventory: []
 --- !u!1 &7845608515403961768
 GameObject:
   m_ObjectHideFlags: 0

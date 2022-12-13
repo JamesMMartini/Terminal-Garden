@@ -74,6 +74,7 @@ public class Water : File
                         {
                             WateredSuccessfully = false;
                             GameManager.Instance.PinkIndex++;
+                            collect.collectible.name = "corrupted flower";
                             collect.collectible.GetComponent<Attributes>().AddAttribute("corrupted");
                         }
 
