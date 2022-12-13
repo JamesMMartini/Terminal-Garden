@@ -107,6 +107,8 @@ public class BugManager : MonoBehaviour
 
     public void DeleteMrRaccoon()
     {
+        activeQuests--;
+
         GameManager.Instance.PinkIndex++;
 
         mrRaccoon.GetComponent<TryDelete>().enabled = false;

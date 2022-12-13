@@ -184,4 +184,5 @@ MonoBehaviour:
   RepairedSuccessfully: 1
   repairedSprite: {fileID: 21300000, guid: f1a33fff2f9a1e04e96d143f041bc698, type: 3}
   brokenSprite: {fileID: 21300000, guid: 49cdd6ee7f282d14e8d2fd2c5b754ed5, type: 3}
+  corruptedSprite: {fileID: 21300000, guid: a000d60b55e044a44a38b1c1d0e6d04e, type: 3}
   QuestName: Fix the fence

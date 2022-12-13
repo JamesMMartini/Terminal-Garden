@@ -9,6 +9,7 @@ public class Repair : File
 
     [SerializeField] Sprite repairedSprite;
     [SerializeField] Sprite brokenSprite;
+    [SerializeField] Sprite corruptedSprite;
     [SerializeField] string QuestName;
 
     void Start()
@@ -79,7 +80,7 @@ public class Repair : File
                         else
                         {
                             RepairedSuccessfully = false;
-                            GetComponent<SpriteRenderer>().sprite = repairedSprite;
+                            GetComponent<SpriteRenderer>().sprite = corruptedSprite;
                             GameManager.Instance.PinkIndex++;
                         }
 
